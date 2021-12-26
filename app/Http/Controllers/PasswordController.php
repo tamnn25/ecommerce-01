@@ -10,40 +10,41 @@ use Auth;
 
 class PasswordController extends Controller
 {
-    
-    public function change(){
+
+    public function change()
+    {
         $data = [];
 
         $user = Auth::user();
-
-        if(!session::get('id')){
+      
+        if (!session::get('id')) {
             $users = User::where('id', $user->id)
                 ->orderBy('id', 'desc')
                 ->get();
 
             $data['users'] = $users;
 
-            return view('password.changepass',$data);
+            return view('password.changepass', $data);
+        } else {
 
-        }else{
-            
             echo 'try again';
         }
-        }
-  
-     public function detailpassword($id){
+    }
+
+    public function detailpassword($id)
+    {
         $data = [];
-       
-        
+
+
         $data = [];
-        
+
         $user = User::findOrFail($id);
 
         $data['user'] = $user;
 
-        return view('password.edit',$data);
+        return view('password.edit', $data);
     }
-   
+
     public function update(Request $request, $id)
     {
         // Method: PUT
@@ -62,7 +63,7 @@ class PasswordController extends Controller
             $user->address = $request->address;
 
             $user->save();
-            
+
             DB::commit();
 
             return redirect()->route('password.password')
