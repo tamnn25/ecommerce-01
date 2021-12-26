@@ -14,7 +14,7 @@
 <body>
 
     <h1>WELCOME </h1>
-    <p>Thank you for trusting and buying our products!!!</p>
+    <p>Thank you for trusting and buying our books!!!</p>
 
     <p>Order Confirmation Code : {{ $orderInfo['code'] }}</p>
 
@@ -45,14 +45,14 @@
                         </td>
                         <td colspan="3">
                             <div class="product-price">
-                                {{ number_format( $cart['price'])}} VND
+                                {{ number_format( $cart['price'])}} $
                             </div>
                         </td>
                         <td colspan="3">
                             <div class="cart-money">
                                 @php
                                     $money = $cart['quantity'] * $cart['price'];
-                                    echo number_format($money) . ' VND';
+                                    echo number_format($money) . ' $';
                                 @endphp
                             </div>
                         </td>

@@ -18,7 +18,7 @@
 
             <h6><a href="#">{{ $product->name }}</a></h6>
 
-            <h5>{{!empty($product->discount) ? $product->discount.'  VND' : number_format($product->price)}} VND</h5>
+            <h5>{{!empty($product->discount) ? $product->discount.'  $' : number_format($product->price)}} $</h5>
             <br>
             <div class="product-buy">
                 <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-primary">View More</a>

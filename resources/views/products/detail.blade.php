@@ -34,10 +34,10 @@
                     </p>
                     <hr>
                     @if (!empty($product->discount))
-                    <p class="product-price text-muted"><del>{{ number_format($product->price) . '   VND' }}</del></p>
-                    <p class="product-price">{{ number_format($product->discount) . 'VND' }}</p>
+                    <p class="product-price text-muted"><del>{{ number_format($product->price) . '   $' }}</del></p>
+                    <p class="product-price">{{ number_format($product->discount) . '$' }}</p>
                     @else
-                    <p class="product-price">{{ number_format($product->price) . '   VND' }}</p>
+                    <p class="product-price">{{ number_format($product->price) . '   $' }}</p>
                     @endif
                     <hr>
                     <p>

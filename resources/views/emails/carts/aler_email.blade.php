@@ -45,14 +45,14 @@
                         </td>
                         <td colspan="3">
                             <div class="product-price">
-                                {{ number_format( $cart['price'])}} VND
+                                {{ number_format( $cart['price'])}} $
                             </div>
                         </td>
                         <td colspan="3">
                             <div class="cart-money">
                                 @php
                                     $money = $cart['quantity'] * $cart['price'];
-                                    echo number_format($money) . ' VND';
+                                    echo number_format($money) . ' $';
                                 @endphp
                             </div>
                         </td>

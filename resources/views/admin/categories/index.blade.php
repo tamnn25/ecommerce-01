@@ -28,7 +28,15 @@
 
 {{-- case 2 --}}
 {{-- <p><a href="/category/create">Create</a></p> --}}
+{{-- show message --}}
+@if(Session::has('success'))
+        <p class="text-success">{{ Session::get('success') }}</p>
+@endif
 
+{{-- show error message --}}
+@if(Session::has('error'))
+<p class="text-danger">{{ Session::get('error') }}</p>
+@endif
 {{-- display list category table --}}
 <table id="category-list" class="table table-bordered table-hover table-striped">
     <thead>

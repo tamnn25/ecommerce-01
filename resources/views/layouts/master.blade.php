@@ -6,7 +6,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | DOAN</title></head>
+    <title>BOOKS-SHOP</title></head>
     @include('layouts.css')
 <body>
     {{-- INCLUDE FILE HEADER --}}
@@ -18,7 +18,7 @@
         <div class="container">
             @yield('content')
         </div>
-
+  
         {{-- //-- ---------------------------------------------------------------------- --// --}}
 
     {{-- INCLUDE FILE FOOTER --}}

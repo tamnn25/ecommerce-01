@@ -185,7 +185,7 @@
                                                         <div class="latest-product__item__text">
                                                             
                                                             <h6 >  {{ $item->name }}</h6>
-                                                <span>{{ number_format($item->price ) . '   VND'  }}</span>
+                                                <span>{{ number_format($item->price ) . '   $'  }}</span>
 
 
                                                         </div>
@@ -270,7 +270,7 @@
                                         </div>
                                         <div class="product__item__text">
                                             <h6><a href="{{ route('product.detail', $product['id']) }}"><strong>{{ $product->name }}</strong></a></h6>
-                                            <span>{{ number_format($product->price ) . '   VND'  }}</span>
+                                            <span>{{ number_format($product->price ) . '   $'  }}</span>
                                             <div class="product-buy">
                                                 <a href="{{ route('product.detail', $product['id']) }}" class="btn  btn-outline-primary">View More</a>
                                             </div>

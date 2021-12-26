@@ -24,7 +24,7 @@
 <hr>
 <img src="/{{ $product->thumbnail }}" alt="{{ $product->name }}" class="img-fluid" style="width: 200px; height: auto;">
 <hr>
-<h1>{{ $product->price.'.000 Vnd' }}</h1>
+<h1>{{ $product->price.'.000 $' }}</h1>
 <hr>
 <label>description</label>
 <h3>{{ $product->description }}</h3>

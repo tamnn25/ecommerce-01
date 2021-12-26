@@ -11,6 +11,6 @@ class Mimetype extends WriterPart
      */
     public function write(): string
     {
-        return 'application/vnd.oasis.opendocument.spreadsheet';
+        return 'application/$.oasis.opendocument.spreadsheet';
     }
 }
