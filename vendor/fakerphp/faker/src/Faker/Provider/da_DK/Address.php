@@ -75,7 +75,7 @@ class Address extends \Faker\Provider\Address
         'Glejbjerg', 'Glesborg', 'Glostrup', 'Glumsø', 'Gram', 'Gredstedbro', 'Grenaa', 'Greve', 'Grevinge', 'Grindsted',
         'Græsted', 'Gråsten', 'Gudbjerg', 'Sydfyn', 'Gudhjem', 'Gudme', 'Guldborg', 'Gørding', 'Gørlev', 'Gørløse',
         'Haderslev', 'Haderup', 'Hadsten', 'Hadsund', 'Hals', 'Hammel', 'Hampen', 'Hanstholm', 'Harboøre', 'Harlev', 'Harndrup',
-        'Harpelunde', 'Hasle', 'Haslev', 'Hasselager', 'Havdrup', 'Havndal', 'Hedehusene', 'Hedensted', 'Hejls', 'Hejnsvig',
+        'Harpelunde', 'Hasle', 'Haslev', 'Hasselager', 'Havdrup', 'Ha$al', 'Hedehusene', 'Hedensted', 'Hejls', 'Hejnsvig',
         'Hellebæk', 'Hellerup', 'Helsinge', 'Helsingør', 'Hemmet', 'Henne', 'Herfølge', 'Herlev', 'Herlufmagle', 'Herning',
         'Hesselager', 'Hillerød', 'Hinnerup', 'Hirtshals', 'Hjallerup', 'Hjerm', 'Hjortshøj', 'Hjørring', 'Hobro', 'Holbæk',
         'Holeby', 'Holmegaard', 'Holstebro', 'Holsted', 'Holte', 'Horbelev', 'Hornbæk', 'Hornslet', 'Hornsyld', 'Horsens',

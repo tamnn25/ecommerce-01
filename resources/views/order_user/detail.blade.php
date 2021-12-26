@@ -48,8 +48,8 @@
             <td><img src="/{{$order->product->thumbnail}}" width="150px" alt=""></td>
             <td>{{$order->product->name}}</td>
             <td>{{$order->quantity}}</td>
-            <td>{{$order->price_id}} VND</td>
-            <td>{{$order->total}} VND</td>
+            <td>{{$order->price_id}} $</td>
+            <td>{{$order->total}} $</td>
         </tr>
         @endforeach
 

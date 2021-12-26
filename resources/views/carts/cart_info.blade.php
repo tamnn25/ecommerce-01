@@ -37,14 +37,14 @@
                 </td>
                 <td>
                     <div class="product-price">
-                        {{ number_format( $cart['price'])}} VND
+                        {{ number_format( $cart['price'])}} $
                     </div>
                 </td>
                 <td>
                     <div class="cart-money">
                         @php
                         $money = $cart['quantity'] * $cart['price'];
-                        echo number_format($money) . ' VND';
+                        echo number_format($money) . ' $';
                         @endphp
                     </div>
                 </td>
@@ -60,7 +60,7 @@
         @endforeach
     </table>
     <div>
-        <p><b>Total: </b> {{ number_format($total) . 'VND' }}</p>
+        <p><b>Total: </b> {{ number_format($total) . '$' }}</p>
     </div>
     <div class="mt-2" style="float:right; margin-left:10px;">
         {{-- tiến hành thanh toán --}}

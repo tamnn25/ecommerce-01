@@ -35,55 +35,55 @@ class ContentTypes extends WriterPart
         $objWriter->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/package/2006/content-types');
 
         // Theme
-        $this->writeOverrideContentType($objWriter, '/xl/theme/theme1.xml', 'application/vnd.openxmlformats-officedocument.theme+xml');
+        $this->writeOverrideContentType($objWriter, '/xl/theme/theme1.xml', 'application/$.openxmlformats-officedocument.theme+xml');
 
         // Styles
-        $this->writeOverrideContentType($objWriter, '/xl/styles.xml', 'application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml');
+        $this->writeOverrideContentType($objWriter, '/xl/styles.xml', 'application/$.openxmlformats-officedocument.spreadsheetml.styles+xml');
 
         // Rels
-        $this->writeDefaultContentType($objWriter, 'rels', 'application/vnd.openxmlformats-package.relationships+xml');
+        $this->writeDefaultContentType($objWriter, 'rels', 'application/$.openxmlformats-package.relationships+xml');
 
         // XML
         $this->writeDefaultContentType($objWriter, 'xml', 'application/xml');
 
         // VML
-        $this->writeDefaultContentType($objWriter, 'vml', 'application/vnd.openxmlformats-officedocument.vmlDrawing');
+        $this->writeDefaultContentType($objWriter, 'vml', 'application/$.openxmlformats-officedocument.vmlDrawing');
 
         // Workbook
         if ($spreadsheet->hasMacros()) { //Macros in workbook ?
             // Yes : not standard content but "macroEnabled"
-            $this->writeOverrideContentType($objWriter, '/xl/workbook.xml', 'application/vnd.ms-excel.sheet.macroEnabled.main+xml');
+            $this->writeOverrideContentType($objWriter, '/xl/workbook.xml', 'application/$.ms-excel.sheet.macroEnabled.main+xml');
             //... and define a new type for the VBA project
             // Better use Override, because we can use 'bin' also for xl\printerSettings\printerSettings1.bin
-            $this->writeOverrideContentType($objWriter, '/xl/vbaProject.bin', 'application/vnd.ms-office.vbaProject');
+            $this->writeOverrideContentType($objWriter, '/xl/vbaProject.bin', 'application/$.ms-office.vbaProject');
             if ($spreadsheet->hasMacrosCertificate()) {
                 // signed macros ?
                 // Yes : add needed information
-                $this->writeOverrideContentType($objWriter, '/xl/vbaProjectSignature.bin', 'application/vnd.ms-office.vbaProjectSignature');
+                $this->writeOverrideContentType($objWriter, '/xl/vbaProjectSignature.bin', 'application/$.ms-office.vbaProjectSignature');
             }
         } else {
             // no macros in workbook, so standard type
-            $this->writeOverrideContentType($objWriter, '/xl/workbook.xml', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml');
+            $this->writeOverrideContentType($objWriter, '/xl/workbook.xml', 'application/$.openxmlformats-officedocument.spreadsheetml.sheet.main+xml');
         }
 
         // DocProps
-        $this->writeOverrideContentType($objWriter, '/docProps/app.xml', 'application/vnd.openxmlformats-officedocument.extended-properties+xml');
+        $this->writeOverrideContentType($objWriter, '/docProps/app.xml', 'application/$.openxmlformats-officedocument.extended-properties+xml');
 
-        $this->writeOverrideContentType($objWriter, '/docProps/core.xml', 'application/vnd.openxmlformats-package.core-properties+xml');
+        $this->writeOverrideContentType($objWriter, '/docProps/core.xml', 'application/$.openxmlformats-package.core-properties+xml');
 
         $customPropertyList = $spreadsheet->getProperties()->getCustomProperties();
         if (!empty($customPropertyList)) {
-            $this->writeOverrideContentType($objWriter, '/docProps/custom.xml', 'application/vnd.openxmlformats-officedocument.custom-properties+xml');
+            $this->writeOverrideContentType($objWriter, '/docProps/custom.xml', 'application/$.openxmlformats-officedocument.custom-properties+xml');
         }
 
         // Worksheets
         $sheetCount = $spreadsheet->getSheetCount();
         for ($i = 0; $i < $sheetCount; ++$i) {
-            $this->writeOverrideContentType($objWriter, '/xl/worksheets/sheet' . ($i + 1) . '.xml', 'application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml');
+            $this->writeOverrideContentType($objWriter, '/xl/worksheets/sheet' . ($i + 1) . '.xml', 'application/$.openxmlformats-officedocument.spreadsheetml.worksheet+xml');
         }
 
         // Shared strings
-        $this->writeOverrideContentType($objWriter, '/xl/sharedStrings.xml', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml');
+        $this->writeOverrideContentType($objWriter, '/xl/sharedStrings.xml', 'application/$.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml');
 
         // Add worksheet relationship content types
         $unparsedLoadedData = $spreadsheet->getUnparsedLoadedData();
@@ -96,13 +96,13 @@ class ContentTypes extends WriterPart
 
             //    We need a drawing relationship for the worksheet if we have either drawings or charts
             if (($drawingCount > 0) || ($chartCount > 0) || $hasUnparsedDrawing) {
-                $this->writeOverrideContentType($objWriter, '/xl/drawings/drawing' . ($i + 1) . '.xml', 'application/vnd.openxmlformats-officedocument.drawing+xml');
+                $this->writeOverrideContentType($objWriter, '/xl/drawings/drawing' . ($i + 1) . '.xml', 'application/$.openxmlformats-officedocument.drawing+xml');
             }
 
             //    If we have charts, then we need a chart relationship for every individual chart
             if ($chartCount > 0) {
                 for ($c = 0; $c < $chartCount; ++$c) {
-                    $this->writeOverrideContentType($objWriter, '/xl/charts/chart' . $chart++ . '.xml', 'application/vnd.openxmlformats-officedocument.drawingml.chart+xml');
+                    $this->writeOverrideContentType($objWriter, '/xl/charts/chart' . $chart++ . '.xml', 'application/$.openxmlformats-officedocument.drawingml.chart+xml');
                 }
             }
         }
@@ -110,7 +110,7 @@ class ContentTypes extends WriterPart
         // Comments
         for ($i = 0; $i < $sheetCount; ++$i) {
             if (count($spreadsheet->getSheet($i)->getComments()) > 0) {
-                $this->writeOverrideContentType($objWriter, '/xl/comments' . ($i + 1) . '.xml', 'application/vnd.openxmlformats-officedocument.spreadsheetml.comments+xml');
+                $this->writeOverrideContentType($objWriter, '/xl/comments' . ($i + 1) . '.xml', 'application/$.openxmlformats-officedocument.spreadsheetml.comments+xml');
             }
         }
 

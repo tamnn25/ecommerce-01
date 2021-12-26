@@ -38,14 +38,14 @@ $newQuantity = 0;
                             <p>{{ $cart['name'] }}</p>
                         </td>
                         <td>
-                            <p>{{ number_format($cart['price'])}} VND</p>
+                            <p>{{ number_format($cart['price'])}} $</p>
                         </td>
                         <td>
                             <p>{{ $cart['quantity']}}</p>
                         </td>
                         <td>
                             <p>
-                            <p>{{ number_format($totalMoney)}} VND</p>
+                            <p>{{ number_format($totalMoney)}} $</p>
                             </p>
                         </td>
                     </div>
@@ -64,7 +64,7 @@ $newQuantity = 0;
                 <td></td>
                 <td></td>
                 <td>The Total Amount:</td>
-                <td>{{ number_format($total) . ' VND' }}</td>
+                <td>{{ number_format($total) . ' $' }}</td>
             </tr>
         </tfoot>
     </table>

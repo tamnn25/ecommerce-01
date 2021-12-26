@@ -36,7 +36,7 @@
                             <div class="flex-item">
                                 @auth
                                 <div class="dropdown">
-                                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span class="fa fa-user"></span><span class="text"> </span><span>{{ Auth::user()->name }}</span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #ceecdf;">
@@ -86,7 +86,7 @@
         <div class="row" >
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{{ route('index')}}"><img src="{{ asset('shop/img/logo.png') }}" alt=""></a>
+                    <a href="{{ route('index')}}"><img src="{{ asset('shop/img/logo.png') }}" height="80px" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">

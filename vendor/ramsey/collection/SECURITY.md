@@ -13,9 +13,9 @@ contribution of external security researchers.
 If you believe you've found a security issue in software that is maintained in
 this repository, we encourage you to notify us.
 
-| Version | In scope | Source code |
-| :-----: | :------: | :---------- |
-| latest  | ✅        | https://github.com/ramsey/collection |
+| Version | In scope | Source code                          |
+| :-----: | :------: | :----------------------------------- |
+| latest  |    ✅    | https://github.com/ramsey/collection |
 
 ## How to Submit a Report
 
@@ -26,13 +26,13 @@ Your submission will be reviewed and validated by a member of our team.
 
 We support safe harbor for security researchers who:
 
-* Make a good faith effort to avoid privacy violations, destruction of data, and
+- Make a good faith effort to avoid privacy violations, destruction of data, and
   interruption or degradation of our services.
-* Only interact with accounts you own or with explicit permission of the account
+- Only interact with accounts you own or with explicit permission of the account
   holder. If you do encounter Personally Identifiable Information (PII) contact
   us immediately, do not proceed with access, and immediately purge any local
   information.
-* Provide us with a reasonable amount of time to resolve vulnerabilities prior
+- Provide us with a reasonable amount of time to resolve vulnerabilities prior
   to any disclosure to the public or a third-party.
 
 We will consider activities conducted consistent with this policy to constitute
@@ -45,10 +45,10 @@ with or unaddressed by this policy.
 
 ## Preferences
 
-* Please provide detailed reports with reproducible steps and a clearly defined
+- Please provide detailed reports with reproducible steps and a clearly defined
   impact.
-* Include the version number of the vulnerable package in your report
-* Social engineering (e.g. phishing, vishing, smishing) is prohibited.
+- Include the version number of the vulnerable package in your report
+- Social engineering (e.g. phishing, vishing, smishing) is prohibited.
 
 ## Encryption Key for security@ramsey.dev
 
@@ -91,7 +91,7 @@ u39Waj1SNWzwGg+Gy1Gl5f2AJoDTxznreCuFGj+Vfaczt/hlfgqpOdb9jsmdoE7t
 3DSWppA9dRHWwQSgE6J28rR4QySBcqyXS6IMykqaJn7Z26yNIaITLnHCZOSY8zhP
 ha7GFsN549EOCgECbrnPt9dmI2+hQE0RO0e7SOBNsIf5sz/i7urhwuj0CbOqhjc2
 X1AEVNFCVcb6HPi/AWefdFCRu0gaWQxn5g+9nkq5slEgvzCCiKYzaBIcr8qR6Hb4
-FaOPVPxO8vndRouq57Ws8XpAwbPttioFuCqF4u9K+tK/8e2/R8QgRYJsE3Cz/Fu8
+FaOPVPxO8$Rouq57Ws8XpAwbPttioFuCqF4u9K+tK/8e2/R8QgRYJsE3Cz/Fu8
 +pZFpMnqbDEbK3DL3ss+1ed1sky+mDV8qXXeI33XW5hMFnk1JWshUjHNlQmE6ftC
 U0xSTMVUtwJhzH2zDp8lEdu7qi3EsNULOl68ozDr6soWAvCbHPeTdTOnFySGCleG
 /3TonsoZJs/sSPPJnxFQ1DtgQL6EbhIwa0ZwU4eKYVHZ9tjxuMX3teFzRvOrJjgs

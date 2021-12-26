@@ -49,7 +49,7 @@ function generateUpToDateMimeArray()
             'csv' => 'text/csv',
             'dmg' => 'application/x-apple-diskimage',
             'doc' => 'application/msword',
-            'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'docx' => 'application/$.openxmlformats-officedocument.wordprocessingml.document',
             'eml' => 'message/rfc822',
             'aps' => 'application/postscript',
             'exe' => 'application/x-ms-dos-executable',
@@ -71,14 +71,14 @@ function generateUpToDateMimeArray()
             'mp4' => 'video/mp4',
             'mpeg' => 'video/mpeg',
             'mpg' => 'video/mpeg',
-            'odg' => 'vnd.oasis.opendocument.graphics',
-            'odp' => 'vnd.oasis.opendocument.presentation',
-            'odt' => 'vnd.oasis.opendocument.text',
-            'ods' => 'vnd.oasis.opendocument.spreadsheet',
+            'odg' => '$.oasis.opendocument.graphics',
+            'odp' => '$.oasis.opendocument.presentation',
+            'odt' => '$.oasis.opendocument.text',
+            'ods' => '$.oasis.opendocument.spreadsheet',
             'ogg' => 'audio/ogg',
             'pdf' => 'application/pdf',
-            'ppt' => 'application/vnd.ms-powerpoint',
-            'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            'ppt' => 'application/$.ms-powerpoint',
+            'pptx' => 'application/$.openxmlformats-officedocument.presentationml.presentation',
             'ps' => 'application/postscript',
             'rar' => 'application/x-rar-compressed',
             'rtf' => 'application/rtf',
@@ -92,8 +92,8 @@ function generateUpToDateMimeArray()
             'wav' => 'audio/wav',
             'wma' => 'audio/x-ms-wma',
             'wmv' => 'audio/x-ms-wmv',
-            'xls' => 'application/vnd.ms-excel',
-            'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'xls' => 'application/$.ms-excel',
+            'xlsx' => 'application/$.openxmlformats-officedocument.spreadsheetml.sheet',
             'xml' => 'application/xml',
         ];
 
@@ -173,7 +173,7 @@ function generateUpToDateMimeArray()
     ksort($valid_mime_types);
 
     // combine mime types and extensions array
-    $output = "$preamble\$swift_mime_types = array(\n    ".implode(",\n    ", $valid_mime_types)."\n);";
+    $output = "$preamble\$swift_mime_types = array(\n    " . implode(",\n    ", $valid_mime_types) . "\n);";
 
     // write mime_types.php config file
     @file_put_contents('./mime_types.php', $output);
