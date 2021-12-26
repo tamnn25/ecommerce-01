@@ -39,4 +39,13 @@ class SendVerifyCode extends Mailable
         $data['carts']      = $this->carts;
         return $this->view('emails.carts.send_verify_code', $data);
     }
+
+    public  function alert_email()
+    { 
+        dd(1);
+        $data = [];
+        $data['orderInfo']  =  $this->orderInfo;
+        // $data['carts']      = $this->carts;
+        return view('emails.carts.aler_email', $data);
+    }
 }

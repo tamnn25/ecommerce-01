@@ -171,7 +171,7 @@ class CartController extends Controller
 
         $currentDate = date('Y-m-d H:i:s');
 
-        $dateSubtract15Minutes = date('Y-m-d H:i:s', (time() - 60 * 15)); // current - 15 minutes
+        $dateSubtract15Minutes = date('Y-m-d H:i:s', (time() - 60 * 1)); // current - 15 minutes
 
         Log::info('dateSubtract15Minutes');
 

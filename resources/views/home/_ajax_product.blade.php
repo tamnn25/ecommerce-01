@@ -21,7 +21,7 @@
             <h5>{{!empty($product->discount) ? $product->discount.'  VND' : number_format($product->price)}} VND</h5>
             <br>
             <div class="product-buy">
-                <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-success">View More</a>
+                <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-primary">View More</a>
             </div>
 
         </div>

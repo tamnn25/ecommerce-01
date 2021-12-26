@@ -48,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-outline-success" type="submit">Add Cart</button>
+                    <button class="btn btn-outline-primary" type="submit">Add Cart</button>
                     </p>
                 </form>
             </div>
@@ -69,7 +69,7 @@
                 @if (!empty($related))
                 @foreach ($related as $item)
                 <div class="col-lg-3">
-                    <div class="categories__item set-bg">
+                    <div class="categories__item set-bg" data-setbg="{{ asset($item->thumbnail) }}">
                         <h5><a href="{{ route('product.detail', $item->id) }}">{{ $item->category->name }}</a>
                         </h5>
 
