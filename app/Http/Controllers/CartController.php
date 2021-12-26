@@ -180,8 +180,8 @@ class CartController extends Controller
             ->whereBetween('expire_date', [$dateSubtract15Minutes, $currentDate])
             ->where('status', OrderVerify::STATUS[0])
             ->first();
-        // info($orderVerify);         
-        if (!empty($orderVerify)) { // already sent code and this code is available
+
+        if (!is_null($orderVerify)) { // already sent code and this code is available
             return response()->json(['message' => 'Please check email to get code after 15 minutes.']);
         } else {
             $dataSave = [
@@ -192,7 +192,6 @@ class CartController extends Controller
                 'code'           => CommonUtil::generateUUID(),
 
                 'expire_date'    => $currentDate,
-
             ];
             DB::beginTransaction();
             try {
@@ -207,7 +206,7 @@ class CartController extends Controller
 
                 return response()->json(['message' => 'Please check email.']);
             } catch (\Exception $exception) {
-                dd($exception);
+
                 // rollback data and dont insert into table
                 // echo $exception->getMessage();
                 info($exception);
