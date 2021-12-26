@@ -195,9 +195,6 @@ class ProductController extends Controller
         $productDetailId = !empty($product->product_detail) ? $product->product_detail->id : null;
         $imagesOld = $product->image;
 
-        Log::info("img old");
-
-
         // get list product image from DB
         $listProductImageDB = [];
         if (!empty($product->product_images)) {
@@ -214,7 +211,6 @@ class ProductController extends Controller
             }
         }
 
-        // dd($request->all());
         $imagePath = null;
         if (
             $request->hasFile('image')
@@ -227,7 +223,7 @@ class ProductController extends Controller
             // $imagePath = $image->move('storage/products', $fileName);
             $imagePath = $image->move('products', $fileName);
 
-            $product->image = 'products/' . $fileName;
+            $product->thumbnail = 'products/' . $fileName;
             Log::info('imagePath: ' . $imagePath);
         }
 
@@ -248,8 +244,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
+        $product->thumbnail = $imagePath;
         $product->category_id = $request->category_id;
-
+   
         // lưu bộ nhớ đệm, ko lưu vào DB.
         DB::beginTransaction();
 
