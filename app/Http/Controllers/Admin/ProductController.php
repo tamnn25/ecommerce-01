@@ -242,6 +242,7 @@ class ProductController extends Controller
         // update data for table product
         $product->name = $request->name;
         $product->description = $request->description;
+
         $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->thumbnail = $imagePath;

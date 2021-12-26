@@ -44,14 +44,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__item set-bg" data-setbg="{{ asset('shop/img/hero/vegetables.jpg') }}">
+          @include('layouts.slider_bar')
+        
+                {{-- <div class="hero__item set-bg" data-setbg="{{ asset('shop/img/hero/vegetables.jpg') }}">
                     <div  class="hero__text">
                         <span>FRUIT FRESH</span>
                         <h2 style="color: white">Vegetable <br />100% Organic</h2>
                         <p>Free Pickup and Delivery Available</p>
                         <a href="{{route('home.shop',0)}}" class="primary-btn">SHOP NOW</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -272,7 +272,7 @@
                                             <h6><a href="{{ route('product.detail', $product['id']) }}"><strong>{{ $product->name }}</strong></a></h6>
                                             <span>{{ number_format($product->price ) . '   VND'  }}</span>
                                             <div class="product-buy">
-                                                <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-success">View More</a>
+                                                <a href="{{ route('product.detail', $product['id']) }}" class="btn  btn-outline-primary">View More</a>
                                             </div>
                                         </div>
                                     </div>
