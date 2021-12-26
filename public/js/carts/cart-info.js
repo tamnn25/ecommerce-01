@@ -15,10 +15,12 @@ $(document).ready(function () {
             data: formData,
             success: function (response) {
                 console.log('response', response);
+             
                 alert(response.message);
             },
             error: function (err) {
                 console.log('err', err);
+                console.log(url);
                 alert(err.message);
             },
             dataType: 'json'

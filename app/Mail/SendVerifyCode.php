@@ -31,13 +31,12 @@ class SendVerifyCode extends Mailable
      * @return $this
      */
 
-     
+
     public function build()
     {
         $data = [];
         $data['orderInfo']  = $this->orderInfo;
         $data['carts']      = $this->carts;
-        dd($data);
         return $this->view('emails.carts.send_verify_code', $data);
     }
 }

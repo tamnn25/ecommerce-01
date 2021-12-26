@@ -101,7 +101,6 @@ class CartController extends Controller
 
     public function Complete(Request $request)
     {
-
         // get cart info
         $carts = Session::all();
 
@@ -184,7 +183,7 @@ class CartController extends Controller
         // info($orderVerify);         
         if (!empty($orderVerify)) { // already sent code and this code is available
             return response()->json(['message' => 'Please check email to get code after 15 minutes.']);
-        } else { // not send code
+        } else {
             $dataSave = [
                 'user_id'        => $userId,
 
@@ -200,13 +199,15 @@ class CartController extends Controller
                 OrderVerify::create($dataSave);
                 $carts = Session::get('carts');
                 // commit insert data into table
-                DB::commit();
 
                 // send code to email
                 Mail::to($email)->send(new SendVerifyCode($dataSave, $carts)); //dùng cái này để send nè giờ   truyền dữ liệu bên  checkout qua email 
 
+                DB::commit();
+
                 return response()->json(['message' => 'Please check email.']);
             } catch (\Exception $exception) {
+                dd($exception);
                 // rollback data and dont insert into table
                 // echo $exception->getMessage();
                 info($exception);
