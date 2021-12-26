@@ -9,7 +9,6 @@
     <table class="table table-bordered table-hover" id="tbl-list-product">
         <thead class="thead-dark">
             <tr>
-
                 <th>Product Name</th>
                 <th>product</th>
                 <th>Quantity</th>
@@ -29,7 +28,7 @@
                     <h5> {{ $cart['name'] }}</h5>
                 </td>
                 <td class="shoping__cart__quantity">
-                  
+
                     <div class="quantity">
                         <div class="pro-qty">
                             <input type="number" name="quantity" required value="{{ number_format($cart['quantity']) }}" max="{{ number_format($cart['quantity']) }}">
@@ -54,9 +53,7 @@
                         @csrf
                         <button value="Delete" style="    border: none;
                                 background-color: white;"><i class="fas fa-calendar-times fa-2x" style="color:rgb(206, 17, 17);"></i></button>
-
                     </form>
-
                 </td>
             </tr>
         </tbody>

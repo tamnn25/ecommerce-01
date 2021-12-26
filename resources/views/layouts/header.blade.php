@@ -103,8 +103,8 @@
                                 <li><a href="#">Brandy</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('blog') }}">Blog</a></li>
-                        <li><a href="{{route('contact.address')}}">Contact Us</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
