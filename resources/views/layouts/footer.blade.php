@@ -8,9 +8,9 @@
                             <a href="./index.html"><img src="shop/img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 92 Quang Trung, Thạch Thang, Hải Châu, Đà Nẵng 550000, Việt Nam</li>
-                            <li>Phone: +84 2363.888.279</li>
-                            <li>Email: aca@iviettech.com</li>
+                            <li>Address: Thành phố Huế, Việt Nam</li>
+                            <li>Phone: +84 0000000000</li>
+                            <li>Email: contact@barnesbook.vn</li>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.hackerrank.com/" target="_blank">Hackerrank</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.hackerrank.com/" target="_blank">PHP-T</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                         <div class="footer__copyright__payment"><img src="shop/img/payment-item.png" alt=""></div>
                     </div>

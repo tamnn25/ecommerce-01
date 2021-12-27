@@ -7,7 +7,7 @@
                     <div class="header__top__left">
                         <ul>
                             <marquee behavior="" direction="">
-                            <li><i class="fa fa-envelope"></i> contact@iviettech.vn</li>
+                            <li><i class="fa fa-envelope"></i> contact@barnesbook.vn</li>
                             <li>Free Shipping for all Order of $99</li>
                             </marquee>
                         </ul>
