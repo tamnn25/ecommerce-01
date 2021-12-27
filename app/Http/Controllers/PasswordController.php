@@ -14,28 +14,17 @@ class PasswordController extends Controller
     public function change()
     {
         $data = [];
-
         $user = Auth::user();
-      
-        if (!session::get('id')) {
-            $users = User::where('id', $user->id)
-                ->orderBy('id', 'desc')
-                ->get();
 
-            $data['users'] = $users;
+        $users = User::where('id', $user->id)->get();
 
-            return view('password.changepass', $data);
-        } else {
+        $data['users'] = $users;
 
-            echo 'try again';
-        }
+        return view('password.changepass', $data);
     }
 
     public function detailpassword($id)
     {
-        $data = [];
-
-
         $data = [];
 
         $user = User::findOrFail($id);
@@ -47,22 +36,17 @@ class PasswordController extends Controller
 
     public function update(Request $request, $id)
     {
+        $attribute = $request->all();
+
         // Method: PUT
-        $request->password = bcrypt('password');
+        $attribute['password'] = bcrypt($attribute['password']);
 
         DB::beginTransaction();
 
         try {
-            // create $category
             $user = User::find($id);
-            // set value for field name
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = $request->password;
-            $user->phone_number = $request->phone_number;
-            $user->address = $request->address;
-
-            $user->save();
+            $user->password = $attribute['password'];
+            $user->update($attribute);
 
             DB::commit();
 

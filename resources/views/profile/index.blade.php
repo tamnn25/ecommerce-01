@@ -74,8 +74,6 @@
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-facebook"></i></a>
         </div>
-
-
         <a href="{{route('password.password')}}"><button>Update Your Profile</button></a></p>
     </div>
     @endforeach
