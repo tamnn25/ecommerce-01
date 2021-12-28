@@ -21,17 +21,23 @@
         <li class="breadcrumb-item active" aria-current="page">Create</li>
     </ol>
 </nav>
-<h4>Create Category</h4>
 
-@include('errors.error')
+@if(Session::has('success'))
+        <p class="text-success">{{ Session::get('success') }}</p>
+@endif
+
+{{-- show error message --}}
+@if(Session::has('error'))
+<p class="text-danger">{{ Session::get('error') }}</p>
+@endif
 
 <form action="{{ route('admin.category.store') }}" method="post">
     @csrf
-    <div class="form-group">
+    <div class="form-group col-md-6">
         <label for="">Category Name:</label>
         <input class="form-control" type="text" name="category_name" placeholder="category name">
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-6">
         <a href="{{ route('admin.category.index') }}" class="btn btn-secondary">List Category</a>
         <button type="submit" class="btn btn-primary">Create</button>
     </div>

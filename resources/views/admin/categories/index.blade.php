@@ -43,7 +43,6 @@
         <tr>
             <th>Stt</th>
             <th>Category Name</th>
-            {{-- <th>Parent_id</th> --}}
             <th>List Product</th>
             <th colspan="3">Action</th>
         </tr>
@@ -54,9 +53,7 @@
         <tr>
             <td>{{ $key+1 }}</td>
             <td>{{ $category->name }}</td>
-            {{-- <td>{{ $category->parent_id }}</td> --}}
             <td><a class="btn btn-outline-info" href="{{ route('admin.product.index', ['category_id' => $category->id]) }}">View List Category</a></td>
-            {{-- <td><a class="btn btn-outline-info" href="{{ route('admin.category.show', $category->id) }}">Detail</a></td> --}}
             <td><a class="btn btn-outline-info" href="{{ route('admin.category.edit', $category->id) }}">Edit</a></td>
             <td>
                 <form action="{{ route('admin.category.destroy', $category->id) }}" method="post">

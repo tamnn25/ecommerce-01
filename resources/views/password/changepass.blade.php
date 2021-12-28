@@ -49,6 +49,9 @@
                     <div class="row mt-3">
                         <div class="col-md-6"><label class="labels">Address</label><input type="text" name="address" class="form-control" value="{{ $item->address }}" placeholder="state"></div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">phone_number</label><input type="text" name="phone_number" class="form-control" value="{{ $item->phone_number }}" placeholder="state"></div>
+                    </div>
                 </div>
                 <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
             </form>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreCategoryRequest;
 use App\Http\Requests\Admin\UpdateCategoryRequest;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -118,7 +119,9 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
-        if (isset($category->products)) {
+
+        $product = Product::where('category_id', $id)->first();
+        if (!is_null($product)) {
             return redirect()->route('admin.category.index')
                 ->with('error', 'Delete Category error!');
         } else {
