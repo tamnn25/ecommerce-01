@@ -27,29 +27,7 @@
           </ul>
         </li>
         {{-- end product --}}
-        {{-- mesages --}}
 
-        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Messages</span></a>
-          <ul aria-expanded="false" class="collapse  first-level">
-            <li class="sidebar-item"><a href="{{ route('admin.message.message') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Messages</span></a></li>
-          </ul>
-        </li>
-        {{-- end message --}}
-        {{-- promotion --}}
-        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-barcode"></i><span class="hide-menu">Promotion manage</span></a>
-          <ul aria-expanded="false" class="collapse  first-level">
-            <li class="sidebar-item"><a href="{{ route('admin.promotion.list_promotion') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Promotion</span></a></li>
-            {{-- <li class="sidebar-item"><a href="{{ route('admin.user.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create User</span></a>
-        </li> --}}
-      </ul>
-      </li>
-      {{-- comments --}}
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-star" aria-hidden="true"></i>
-          <span class="hide-menu">List Review</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.comment.comment') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">Review products</span></a></li>
-          {{-- <li class="sidebar-item"><a href="{{ route('admin.user.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create User</span></a>
-      </li> --}}
       </ul>
       </li>
       @elseif (auth()->guard('admin')->user()->role_id == 3)
