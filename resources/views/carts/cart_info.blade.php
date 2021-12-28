@@ -29,11 +29,7 @@
                 </td>
                 <td class="shoping__cart__quantity">
 
-                    <div class="quantity">
-                        <div class="pro-qty">
-                            <input type="number" name="quantity" required value="{{ number_format($cart['quantity']) }}" max="{{ number_format($cart['quantity']) }}">
-                        </div>
-                    </div>
+                    <h5>{{ number_format($cart['quantity']) }}</h5>
                 </td>
                 <td>
                     <div class="product-price">
