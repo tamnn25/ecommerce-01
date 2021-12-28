@@ -4,13 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Admin;
 use Exception;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Admin\StoreUserRequest;
-use App\Http\Requests\Admin\UpdateCategoryRequest;
 
 class UserController extends Controller
 {
@@ -22,27 +19,22 @@ class UserController extends Controller
 
     public function index(request $request)
     {
-        //
         $data = [];
-        //echo "day la manager User (Crud)";
-
-        // $admins = Admin::paginate(8);
         $admins = Admin::orderBy('id', 'desc')->paginate(4);
 
-        if(!empty($request->name)){
-            $admins = Admin::where('name' , 'like' , '%' . $request->name . '%')
-            ->orderBy('id', 'desc')
-            ->paginate(4);
+        if (!empty($request->name)) {
+            $admins = Admin::where('name', 'like', '%' . $request->name . '%')
+                ->orderBy('id', 'desc')
+                ->paginate(4);
         }
-        if(!empty($request->role_id)){
-            $admins = Admin::where('role_id' , 'like' , '%' . $request->role_id . '%')
-            ->orderBy('id', 'desc')
-            ->paginate(4);
+        if (!empty($request->role_id)) {
+            $admins = Admin::where('role_id', 'like', '%' . $request->role_id . '%')
+                ->orderBy('id', 'desc')
+                ->paginate(4);
         }
-
-
         $data['admins'] = $admins;
-        return view('admin.user.index',$data);
+
+        return view('admin.user.index', $data);
     }
 
     /**
@@ -52,7 +44,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
         return view('admin.user.create');
     }
 
@@ -63,66 +54,58 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreUserRequest $request)
-    {   $request->password = bcrypt('password');
-        //
+    {
+        $request->password = bcrypt($request->password);
         $userInsert = [
             'name' => $request->name,
-            'email'=> $request->email,
-            'email_verified_at' => now(),
+            'email' => $request->email,
             'password' => $request->password,
             'role_id' => $request->role_id,
-            'remember_token' => Str::random(10),
         ];
         DB::beginTransaction();
-        //dd($userInsert);
-        try{
+
+        try {
             Admin::create($userInsert);
             DB::commit();
             return redirect()->route('admin.user.index')->with('sucess', 'Insert into data to Category Sucessful.');
-
-        }catch(Exception $ex){
+        } catch (Exception $ex) {
             echo $ex->getMessage();
         }
     }
 
-    
     public function edit($id)
     {
-        //
         $data = [];
         $users = Admin::find($id);
-        
+
         $data['users'] = $users;
-        return view('admin.user.edit',$data);
-       
+        return view('admin.user.edit', $data);
     }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    public function update(UpdateCategoryRequest $request, $id)
-    {   $request->password = bcrypt('password');
-        // dd($id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $request->password = bcrypt($request->password);
         DB::beginTransaction();
-        
-        try{
+        try {
             $users = Admin::findOrFail($id);
             // $users->name = $request->name;
             // $users->email = $request->email;
             $users->password = $request->password;
             $users->role_id = $request->role_id;
 
-
             $users->save();
-            
+
             DB::commit();
             return redirect()->route('admin.user.index')->with('success', 'Update User successful!');
-        }catch(Exception $ex){
-            echo $ex->getMessage();
+        } catch (Exception $ex) {
+            DB::commit();
         }
     }
 
@@ -144,10 +127,10 @@ class UserController extends Controller
 
             return redirect()->route('admin.user.index')
                 ->with('success', 'Delete User successful!');
-        }  catch (\Exception $ex) {
+        } catch (\Exception $ex) {
             echo $ex->getMessage();
             DB::rollBack();
-            // have error so will show error message
+            
             return redirect()->back()->with('error', $ex->getMessage());
         }
     }

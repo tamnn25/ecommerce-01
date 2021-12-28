@@ -26,7 +26,7 @@
                         <th>{{$user->phone_number}}</th>
                         <th>{{$user->created_at}}</th>
                         <td>
-                            <form action="{{ route('admin.customer.destroy', $user->id) }}" method="post" onclick="return confirm('Are you sure DELETE ?')>
+                            <form action="{{ route('admin.customer.destroy', $user->id) }}" method="post" onclick="return confirm('Are you sure DELETE ?')">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" name="submit" value="Delete" class="btn btn-outline-danger">

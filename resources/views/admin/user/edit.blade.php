@@ -1,7 +1,5 @@
 @extends('admin.layouts.master')
 
-
-{{-- import file css (private) --}}
 @push('css')
     <link rel="stylesheet" href="/admin/css/product/product-create.css">
 @endpush
@@ -17,8 +15,6 @@
     <form style="padding:100px" action="{{ route('admin.user.update', $users->id) }}" method="post">
         @csrf
         @method('PUT')
-        {{-- <input name="_method" type="hidden" value="PUT"> --}}
-     
 
         <div class="row">
             <div class="col-3">
@@ -29,9 +25,7 @@
             <div class="col-3">
                 <label class=""> User Email</label>
                 <h5>{{$users->email}}</h5>
-                @error('email')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+
             </div>
         </div>    
         <div class="row">
