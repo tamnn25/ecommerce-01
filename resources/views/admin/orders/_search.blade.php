@@ -7,16 +7,16 @@
         <div class="col-md-4">
           <select class="form-control" name="status">
               <option value="">Trạng thái đơn hàng</option>
-              <option value="1"  {{ !empty($status) && $status=='1'}}>chưa thanh toán</option>
+              <option value="1"  {{ !empty($status) && $status=='1'}}>Chưa thanh toán</option>
               <option value="2"  {{ !empty($status) && $status=="2"}}>Đã thanh toán online</option>
-              <option value="3"  {{ !empty($status) && $status=="3"}}> shipper đang đi giao hàng</option>
-              <option value="4"  {{ !empty($status) && $status=="4"}}> cancel đơn hàng</option>
-              <option value="5"  {{ !empty($status) && $status=="5"}}> hoàn thành</option>
-              {{-- <option value="5"  {{ !empty($status) && $status=="5" ? 'selected' : '' }}> hoàn thành</option> --}}
+              <option value="3"  {{ !empty($status) && $status=="3"}}> Shipper đang đi giao hàng</option>
+              <option value="4"  {{ !empty($status) && $status=="4"}}> Cancel đơn hàng</option>
+              <option value="5"  {{ !empty($status) && $status=="5"}}> Hoàn thành</option>
+              {{-- <option value="5"  {{ !empty($status) && $status=="5" ? 'selected' : '' }}> Hoàn thành</option> --}}
 
             </select>
       </div>
     <hr>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
     </form>
   </nav>

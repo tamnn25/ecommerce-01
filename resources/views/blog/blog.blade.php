@@ -15,20 +15,20 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>Danh mục sản phẩm</span>
                     </div>
                     <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                        <li><a href="#">Văn học</a></li>
+                        <li><a href="#">Kinh tế</a></li>
+                        <li><a href="#">Tâm lý - Kỹ năng sống</a></li>
+                        <li><a href="#">Nuôi dạy con</a></li>
+                        <li><a href="#">Sách thiếu nhi</a></li>
+                        <li><a href="#">Tiểu sử - Hồi ký</a></li>
+                        <li><a href="#">Sách ngoại ngữ</a></li>
+                        <li><a href="#">Sách mới</a></li>
+                        <li><a href="#">Sách bán chạy</a></li>
+                        <li><a href="#">Dụng cụ học sinh</a></li>
+                        <li><a href="#">Bách hóa lưu niệm</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         <form action="#">
 
                             <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
+                            <button type="submit" class="site-btn">Tìm Kiếm</button>
                         </form>
                     </div>
                     <div class="hero__search__phone">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="hero__search__phone__text">
                             <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
+                            <span>Hỗ trợ 24/7</span>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="breadcrumb__text">
                     <h2>Blog</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html">Home</a>
+                        <a href="./index.html">Trang Chủ</a>
                         <span>Blog</span>
                     </div>
                 </div>
@@ -88,25 +88,30 @@
                         </form>
                     </div>
                     <div class="blog__sidebar__item">
-                        <h4>Categories</h4>
+                        <h4>Danh mục sản phẩm</h4>
                         <ul>
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">Beauty (20)</a></li>
-                            <li><a href="#">Food (5)</a></li>
-                            <li><a href="#">Life Style (9)</a></li>
-                            <li><a href="#">Travel (10)</a></li>
+                            <li><a href="#">Tất cả</a></li>
+                            <li><a href="#">Văn học</a></li>
+                            <li><a href="#">Kinh tế</a></li>
+                            <li><a href="#">Tâm lý - Kỹ năng sống</a></li>
+                            <li><a href="#">Nuôi dạy con</a></li>
+                            <li><a href="#">Sách ngoại ngữ</a></li>
+                            <li><a href="#">Sách mới</a></li>
+                            <li><a href="#">Sách bán chạy</a></li>
+                            <li><a href="#">Dụng cụ học sinh</a></li>
+                            <li><a href="#">Bách hóa lưu niệm</a></li>
                         </ul>
                     </div>
                     <div class="blog__sidebar__item">
-                        <h4>Recent News</h4>
+                        <h4>Tin tức gần đây</h4>
                         <div class="blog__sidebar__recent">
                             <a href="#" class="blog__sidebar__recent__item">
                                 <div class="blog__sidebar__recent__item__pic">
                                     <img src="{{ asset('shop/img/blog/sidebar/sr-1.jpg') }}" alt="">
                                 </div>
                                 <div class="blog__sidebar__recent__item__text">
-                                    <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-                                    <span>MAR 05, 2019</span>
+                                    <h6>09 quyển sách hay <br />nuôi dạy con tốt</h6>
+                                    <span>Tháng 3, 2019</span>
                                 </div>
                             </a>
                             <a href="#" class="blog__sidebar__recent__item">
@@ -114,8 +119,8 @@
                                     <img src="{{ asset('shop/img/blog/sidebar/sr-2.jpg') }}" alt="">
                                 </div>
                                 <div class="blog__sidebar__recent__item__text">
-                                    <h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
-                                    <span>MAR 05, 2019</span>
+                                    <h6>Mẹo bán hàng<br /> dành cho dân kinh doanh</h6>
+                                    <span>Tháng 3, 2019</span>
                                 </div>
                             </a>
                             <a href="#" class="blog__sidebar__recent__item">
@@ -123,21 +128,21 @@
                                     <img src="{{ asset('shop/img/blog/sidebar/sr-3.jpg') }}" alt="">
                                 </div>
                                 <div class="blog__sidebar__recent__item__text">
-                                    <h6>4 Principles Help You Lose <br />Weight With Vegetables</h6>
-                                    <span>MAR 05, 2019</span>
+                                    <h6>4 loại bút mà học sinh <br />tiểu học cần</h6>
+                                    <span>Tháng 3, 2019</span>
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="blog__sidebar__item">
-                        <h4>Search By</h4>
+                        <h4>Tìm kiếm theo</h4>
                         <div class="blog__sidebar__item__tags">
-                            <a href="#">Apple</a>
-                            <a href="#">Beauty</a>
-                            <a href="#">Vegetables</a>
-                            <a href="#">Fruit</a>
-                            <a href="#">Healthy Food</a>
-                            <a href="#">Lifestyle</a>
+                            <a href="#">Sách bán chạy</a>
+                            <a href="#">Sắc đẹp</a>
+                            <a href="#">Sức khỏe</a>
+                            <a href="#">Trí tuệ</a>
+                            <a href="#">Kỹ năng sống</a>
+                            <a href="#">Phong cách sống</a>
                         </div>
                     </div>
                 </div>
@@ -151,13 +156,12 @@
                             </div>
                             <div class="blog__item__text">
                                 <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                    <li><i class="fa fa-calendar-o"></i> Tháng 4,2019</li>
                                     <li><i class="fa fa-comment-o"></i> 5</li>
                                 </ul>
-                                <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat </p>
-                                <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                <h5><a href="#">6 điều mà bạn cần chuẩn bị trước khi 30</a></h5>
+                                <p>Có người bảo đời người chỉ bắt đầu khi ta 30 tuổi. Nhưng để có một tuổi 30 trong mơ, 29 năm trước bạn cần phải chuẩn bị nhiều thứ...</p>
+                                <a href="#" class="blog__btn">Xem thêm <span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -171,10 +175,9 @@
                                     <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                                     <li><i class="fa fa-comment-o"></i> 5</li>
                                 </ul>
-                                <h5><a href="#">Visit the clean farm in the US</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat </p>
-                                <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                <h5><a href="#">Tham quan trang trại sạch ở Mỹ</a></h5>
+                                <p>Nhà kho là nơi dùng để chứa các dụng cụ làm vườn và chăm bón cây, cứ vài tuần sẽ có người đến dọn dẹp sạch sẽ một lần...</p>
+                                <a href="#" class="blog__btn">Xem thêm<span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -188,10 +191,9 @@
                                     <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                                     <li><i class="fa fa-comment-o"></i> 5</li>
                                 </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat </p>
-                                <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                <h5><a href="#">Mẹo nấu ăn giúp việc nấu ăn trở nên đơn giản</a></h5>
+                                <p>1. Đối với trứng · 2. Nghiền khoai tây bằng sữa ấm · 3. Không để chảo quá tải · 4. Áp chảo thịt bằng chảo không dính...</p>
+                                <a href="#" class="blog__btn">Xem thêm<span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -205,10 +207,9 @@
                                     <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                                     <li><i class="fa fa-comment-o"></i> 5</li>
                                 </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat </p>
-                                <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                <h5><a href="#">Mẹo nấu ăn giúp việc nấu ăn trở nên đơn giản</a></h5>
+                                <p>1. Đối với trứng · 2. Nghiền khoai tây bằng sữa ấm · 3. Không để chảo quá tải · 4. Áp chảo thịt bằng chảo không dính...</p>
+                                <a href="#" class="blog__btn">Xem thêm<span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -222,10 +223,9 @@
                                     <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                                     <li><i class="fa fa-comment-o"></i> 5</li>
                                 </ul>
-                                <h5><a href="#">The Moment You Need To Remove Garlic From The Menu</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat </p>
-                                <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                <h5><a href="#">Tham quan trang trại sạch ở Mỹ</a></h5>
+                                <p>Nhà kho là nơi dùng để chứa các dụng cụ làm vườn và chăm bón cây, cứ vài tuần sẽ có người đến dọn dẹp sạch sẽ một lần...</p>
+                                <a href="#" class="blog__btn">Xem thêm<span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -239,10 +239,9 @@
                                     <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                                     <li><i class="fa fa-comment-o"></i> 5</li>
                                 </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat </p>
-                                <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                <h5><a href="#">Tham quan trang trại sạch ở Mỹ</a></h5>
+                                <p>Nhà kho là nơi dùng để chứa các dụng cụ làm vườn và chăm bón cây, cứ vài tuần sẽ có người đến dọn dẹp sạch sẽ một lần...</p>
+                                <a href="#" class="blog__btn">Xem thêm<span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>

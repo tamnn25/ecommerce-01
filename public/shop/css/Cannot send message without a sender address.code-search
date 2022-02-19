@@ -1,0 +1,9 @@
+# Query: Cannot send message without a sender address
+# ContextLines: 1
+
+1 result - 1 file
+
+vendor\swiftmailer\swiftmailer\lib\classes\Swift\Transport\AbstractSmtpTransport.php:
+  194          if (!$reversePath = $this->getReversePath($message)) {
+  195:             $this->throwException(new Swift_TransportException('Không thể gửi tin nhắn mà không có địa chỉ người gửi'));
+  196          }

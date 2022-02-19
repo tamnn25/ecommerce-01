@@ -10,7 +10,7 @@
                         <div class="hero__categories">
                             <div class="hero__categories__all">
                                 <i class="fa fa-bars"></i>
-                                <span>All departments</span>
+                                <span>Danh mục sản phẩm</span>
                             </div>
                             <ul style=" display:none; " >
                                 @foreach ($categories as $category)
@@ -32,8 +32,8 @@
                                                 All Categories
                                                 <span class="arrow_carrot-down"></span>
                                             </div> -->
-                                            <input type="text" name="key" placeholder="What Would You Like To Buy ?">
-                                            <button type="submit" class="site-btn">SEARCH</button>
+                                            <input type="text" name="key" placeholder="Bạn muốn tìm mua sách nào?">
+                                            <button type="submit" class="site-btn">Tìm Kiếm</button>
                                         </form>
                                     </div>    
                             </div>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="hero__search__phone__text">
                                     <h5>+84 263 888 279</h5>
-                                    <span>support 24/7 time</span>
+                                    <span>Hỗ trợ 24/7</span>
                                 </div>
                             </div>
                         </div>
@@ -58,10 +58,10 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="breadcrumb__text">
-                            <h2>Shopping</h2>
+                            <h2>Sản Phẩm</h2>
                             <div class="breadcrumb__option">
-                                <a href="{{ route('home.shop', 0) }}">Home</a>
-                                <span>Shopping</span>
+                                <a href="{{ route('home.shop', 0) }}">Trang Chủ</a>
+                                <span>Sản Phẩm</span>
                             </div>
                         </div>
                     </div>
@@ -77,13 +77,13 @@
                             
                             <div class="sidebar__item">
                                     {{-- {{dd(request()->route()->parameters['id'])}} --}}
-                                <h4>Price</h4> <hr>
+                                <h4>Giá</h4> <hr>
                                 <div class="price-range-wrap " >
                                     <form action="{{ route('home.shop', request()->route()->parameters['id']) }}">
                                         <input  type="radio" name="money" id="" value="1"> <label for="">Từ 0 - 100.000</label><br>
                                         <input  type="radio" name="money" id="" value="2"> <label for="">Từ 100.000 - 500.000</label><br>
                                         <input  type="radio" name="money" id="" value="3"> <label for="">Từ 500.000 - 1.000.000</label><br>
-                                        <input  type="submit" value="Search" class="btn btn-outline-success">
+                                        <input  type="submit" value="Tìm Kiếm" class="btn btn-outline-success">
                                     </form>
 
                                     {{-- <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
@@ -170,7 +170,7 @@
                             </div> --}}
                             <div class="sidebar__item">
                                 <div class="latest-product__text">
-                                    <h4>Latest Products</h4>
+                                    <h4>Sản phẩm mới nhất</h4>
                                      <div class="latest-product__slider owl-carousel">
                                         @for ($i = 1; $i <= 3; $i++) 
                                             <div class="latest-prdouct__slider__item">
@@ -186,7 +186,7 @@
                                                             <div class="latest-product__item__text">
                                                                 
                                                                 <h6 >  {{ $item->name }}</h6>
-                                                    <span>{{ number_format($item->price ) . '   $'  }}</span>
+                                                    <span>{{ number_format($item->price ) . '   VNĐ'  }}</span>
 
 
                                                             </div>
@@ -239,12 +239,12 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="filter__found">
                                         
-                                        <h6><strong>You're Fround</strong><span> 
+                                        <h6><strong>Bạn đã tìm thấy</strong><span> 
                                         @php
                                             $soluong = count($products);
                                             echo $soluong;
                                         @endphp
-                                        </span> <strong>Products</strong></h6>
+                                        </span> <strong>Sản phẩm</strong></h6>
                                     
                                     </div>
                                 </div>
@@ -271,9 +271,9 @@
                                             </div>
                                             <div class="product__item__text">
                                                 <h6><a href="{{ route('product.detail', $product['id']) }}"><strong>{{ $product->name }}</strong></a></h6>
-                                                <span>{{ number_format($product->price ) . '   $'  }}</span>
+                                                <span>{{ number_format($product->price ) . '   VNĐ'  }}</span>
                                                 <div class="product-buy">
-                                                    <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-success">View More</a>
+                                                    <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-success">Xem Thêm</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -13,10 +13,10 @@
 
 <body>
 
-    <h1>WELCOME </h1>
-    <p>Thank you for trusting and buying our books!!!</p>
+<h1>Xin chào!</h1>
+    <p>Cảm ơn bạn đã tin tưởng và lựa chọn mua sắm tại cửa hàng của chúng tôi.</p>
 
-    <p>Order Confirmation Code : {{ $orderInfo['code'] }}</p>
+    <p>Đây là mã xác nhận đơn hàng: {{ $orderInfo['code'] }}</p>
 
     <!-- <table class="table table-bordered table-hover" id="tbl-list-product">
             <thead class="thead-dark">
@@ -62,7 +62,7 @@
             @endforeach
         </table> -->
 
-    <p>Thank You !!</p>
+    <p>Cảm ơn !!</p>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

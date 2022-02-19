@@ -1,4 +1,4 @@
-<h4 class="btn btn-info">Billing Information</h4>
+<h4 class="btn btn-info">Thông tin thanh toán</h4>
 {{-- Thông Tin Thanh Toán --}}
     <br>
 <div class="border p-2">
@@ -14,15 +14,15 @@
         <div class="form-group" id="payment-info">
             <div class="border p-2">
                 <div class="form-group mb-2">
-                    <label for="">Credit Card Number</label>
+                    <label for="">Số thẻ tín dụng</label>
                     <input type="number" value="" name="cc_number" class="form-control" placeholder="" autocomplete="off">
                 </div>
                 <div class="form-group mb-2">
-                    <label for="">Expiration Date</label>
+                    <label for="">Ngày hết hạn</label>
                     <input type="text" value="" name="cc_expire_date" class="form-control" placeholder="" autocomplete="off">
                 </div>
                 <div class="form-group mb-2">
-                    <label for="">Signature/ CVV2 Code</label>
+                    <label for="">Chữ ký / Mã CVV2</label>
                     <input type="number" value="" name="cc_cvv" class="form-control" placeholder="" autocomplete="off">
                 </div>
             </div>

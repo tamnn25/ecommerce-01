@@ -1,4 +1,4 @@
 @extends('layouts.master')
 @section('content')
-<h1>form update profile</h1>
+<h1>Cập nhật hồ sơ của bạn</h1>
 @endsection

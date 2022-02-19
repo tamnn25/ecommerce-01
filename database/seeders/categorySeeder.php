@@ -19,15 +19,14 @@ class categorySeeder extends Seeder
         $date = date('Y-m-d H:i:s');
         $data = [
 
-            ['name' => 'Fresh Meat', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Vegetables', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Fruit & Nut Gifts', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Fresh Berries', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Ocean Foods', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Butter & Eggs', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Fastfood', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Fresh Onion', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Oatmeal', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Văn học', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Kinh tế', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Tâm lý - Kỹ năng sống', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Nuôi dạy con', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Sách thiếu nhi', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Tiểu sử - Hồi ký', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Sách ngoại ngữ', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Sách mới', 'created_at' => $date, 'updated_at' => $date],
 
         ];
 

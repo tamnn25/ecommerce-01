@@ -11,7 +11,7 @@
             {{-- <label class="form-label" for="form1"> searched by email</label> --}}
             <input type="date" class="form-control mr-sm-2" name="date" placeholder="email" value="{{ request()->get('email') }}" >
 
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
         </form>
     </nav>
 </div>

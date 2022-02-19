@@ -29,7 +29,7 @@
         
         
         <div class="mb-3">
-            <button type="submit" class="btn btn-outline-primary">Search</button>
+            <button type="submit" class="btn btn-outline-primary">Tìm Kiếm</button>
         </div>
     </form>
 </div>

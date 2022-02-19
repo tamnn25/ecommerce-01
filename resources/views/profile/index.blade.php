@@ -64,9 +64,9 @@
             <p class="title" style="  font-family: fantasy;">CEO & Founder, Apple.Com</p>
         </h4>
         <br>
-        <h6><strong>Your Email : </strong> {{$user->email}}</h6>
+        <h6><strong>Email : </strong> {{$user->email}}</h6>
         <br>
-        <h6><strong>Phone_number : </strong>{{$user->phone_number}}</h6>
+        <h6><strong>Số điện thoại: </strong>{{$user->phone_number}}</h6>
 
         <div style="margin: 24px 0;">
             <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -74,7 +74,7 @@
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-facebook"></i></a>
         </div>
-        <a href="{{route('password.password')}}"><button>Update Your Profile</button></a></p>
+        <a href="{{route('password.password')}}"><button>Cập nhật hồ sơ của bạn</button></a></p>
     </div>
     @endforeach
     @endif

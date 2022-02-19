@@ -5,7 +5,7 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>Danh mục sản phẩm</span>
                     </div>
                     @foreach ($categories as $category)
                     <ul>
@@ -29,8 +29,8 @@
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
                                 </div> -->
-                            <input type="text" name="key" placeholder="What Would You Like To Buy ?">
-                            <button type="submit" class="site-btn">SEARCH</button>
+                            <input type="text" name="key" placeholder="Bạn muốn mua sách nào?">
+                            <button type="submit" class="site-btn">Tìm Kiếm</button>
                         </form>
                     </div>
                     <div class="hero__search__phone">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="hero__search__phone__text">
                             <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
+                            <span>Hỗ trợ 24/7</span>
                         </div>
                     </div>
                 </div>

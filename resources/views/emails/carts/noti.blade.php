@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>BOOK-SHOP</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,17 +13,17 @@
 
 <body>
 
-    <h1>WELCOME </h1>
-    <p>Thank you for trusting and buying our products!!!</p>
+    <h1>Xin chào!</h1>
+    <p>Cảm ơn bạn đã tin tưởng và lựa chọn mua sắm tại cửa hàng của chúng tôi.</p>
 
     <table class="table table-bordered table-hover" id="tbl-list-product">
         <thead class="thead-dark">
             <tr>
-                <th colspan="3">Product Name</th>
-                <th colspan="3">product</th>
-                <th colspan="3">Quantity</th>
-                <th colspan="3">Price</th>
-                <th colspan="3">Money</th>
+                <th colspan="3">Tên sản phẩm</th>
+                <th colspan="3">Sản phẩm</th>
+                <th colspan="3">Số lượng</th>
+                <th colspan="3">Giá</th>
+                <th colspan="3">Thành tiền</th>
             </tr>
         </thead>
         @foreach ($carts as $key => $cart)
@@ -60,7 +60,7 @@
         @endforeach
     </table>
 
-    <p>Thank You !!</p>
+    <p>Cảm ơn !!</p>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

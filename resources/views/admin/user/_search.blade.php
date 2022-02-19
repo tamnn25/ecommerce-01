@@ -13,6 +13,6 @@
             <option value="3" {{ !empty($role_id) && $role_id == 3}}>Shipper</option>
           </select>
       </div>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
     </form>
   </nav>

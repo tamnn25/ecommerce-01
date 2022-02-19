@@ -142,7 +142,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title from-blog__title">
-                    <h2>From The Blog</h2>
+                    <h2>Blog của chúng tôi</h2>
                 </div>
             </div>
         </div>
@@ -157,8 +157,8 @@
                             <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">6 điều mà bạn cần chuẩn bị trước khi 30</a></h5>
+                        <p>Có người bảo đời người chỉ bắt đầu khi ta 30 tuổi. Nhưng để có một tuổi 30 trong mơ, 29 năm trước bạn cần phải chuẩn bị nhiều thứ</p>
                     </div>
                 </div>
             </div>
@@ -172,8 +172,8 @@
                             <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Tham quan trang trại sạch ở Mỹ</a></h5>
+                        <p>Nhà kho là nơi dùng để chứa các dụng cụ làm vườn và chăm bón cây, cứ vài tuần sẽ có người đến dọn dẹp sạch sẽ một lần</p>
                     </div>
                 </div>
             </div>
@@ -187,8 +187,8 @@
                             <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">Visit the clean farm in the US</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Mẹo nấu ăn giúp việc nấu ăn trở nên đơn giản</a></h5>
+                        <p>1. Đối với trứng · 2. Nghiền khoai tây bằng sữa ấm · 3. Không để chảo quá tải · 4. Áp chảo thịt bằng chảo không dính</p>
                     </div>
                 </div>
             </div>
