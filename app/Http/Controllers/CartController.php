@@ -22,12 +22,11 @@ class CartController extends Controller
 {
     public function addCart(Request $request, $id)
     {
-        // dd(123);
         //get data from SESSION
         $sessionAll = Session::all();
 
         $carts = empty($sessionAll['carts']) ? [] : $sessionAll['carts'];
-        // dd($sessionAll);
+
         if (!empty($carts[$id])) {
 
             $carts[$id]['quantity'] += $request->quantity;
@@ -62,7 +61,7 @@ class CartController extends Controller
     public function CartInfo(Request $request)
     {
         $data = [];
-        //get data from SESSION 
+        //get data from SESSION
         $sessionAll = Session::all();
         $carts = empty($sessionAll['carts']) ? [] : $sessionAll['carts'];
         $total = $this->calculateTotalCart($carts);
@@ -90,7 +89,6 @@ class CartController extends Controller
         $data = [];
 
         //get cart info from SESSION
-
         $carts  = empty(Session::get('carts')) ? [] : Session::get('carts');
         $total = $this->calculateTotalCart($carts);
         $data['carts'] = $carts;
@@ -139,7 +137,7 @@ class CartController extends Controller
                     // save data into table order_details
                     OrderDetail::create($orderDetail);
                     $product = Product::whereId($productId)->first();
-                    //    -------------------------------- 
+                    //    --------------------------------
                     $product = Product::whereId($productId)->first();
                     $product->update(['quantity' => $product->quantity - $quantity]);
                     // khi order thanh công sẽ trừ số lượng  product
@@ -151,10 +149,6 @@ class CartController extends Controller
 
             return redirect()->route('order_user.list_order')->with('success', 'Your Order was successful!');
         } catch (Exception $exception) {
-
-            echo $exception->getMessage();
-            exit;
-
             DB::rollBack();
 
             return redirect()->back()->with('error', $exception->getMessage());
@@ -178,7 +172,7 @@ class CartController extends Controller
         Log::info($dateSubtract15Minutes);
         $orderVerify = OrderVerify::where('user_id', $userId)
             ->whereBetween('expire_date', [$dateSubtract15Minutes, $currentDate])
-            ->where('status', OrderVerify::STATUS[0])
+            ->where('status', orderVerify::STATUS[0])
             ->first();
 
         if (!is_null($orderVerify)) { // already sent code and this code is available
@@ -200,7 +194,7 @@ class CartController extends Controller
                 // commit insert data into table
 
                 // send code to email
-                Mail::to($email)->send(new SendVerifyCode($dataSave, $carts)); //dùng cái này để send nè giờ   truyền dữ liệu bên  checkout qua email 
+                Mail::to($email)->send(new SendVerifyCode($dataSave, $carts)); //dùng cái này để send nè giờ   truyền dữ liệu bên  checkout qua email
 
                 DB::commit();
 

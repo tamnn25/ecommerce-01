@@ -1,0 +1,35 @@
+version: "3"
+services:
+  api:
+    image: kun391/phpup:1.1
+    ports:
+      - 9030:80
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www/app
+      - ./deployment/certs/cert.pem:/etc/nginx/www-ssl/certificate.crt
+      - ./deployment/certs/private.key:/etc/nginx/www-ssl/privateKey.key
+      - ./deployment/configs/queue.conf:/etc/supervisor/conf.d/queue.conf
+      - ./deployment/configs/nginx.conf:/etc/nginx/sites-enabled/default.conf
+      - ./deployment/configs/nginx.ssl.conf:/etc/nginx/sites-enabled/default.ssl.conf
+    environment:
+      - PHP_MEM_LIMIT=2048M
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: user123
+  # container for UI database management
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9029:80
+    depends_on:
+      - db
+    environment:
+      PMA_HOSTS: db
+      PMA_USER: dbuser
+      PMA_PASSWORD: user123
