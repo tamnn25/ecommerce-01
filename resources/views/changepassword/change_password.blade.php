@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         <span class="glyphicon glyphicon-th"></span>
-                        Change password
+                        Thay đổi mật khẩu
                     </h3>
                 </div>
                 <div class="panel-body">
@@ -23,18 +23,18 @@
                          <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                              <input class="form-control" name="password" type="password" placeholder="Current Password">
+                              <input class="form-control" name="password" type="password" placeholder="Mật khẩu hiện tại">
                             </div>
                           </div> --}}
                             @foreach ($user as $key => $value)
                             <h3>{{$value->name}}</h3>
                             <div class="form-group">
-                                <label>new password:</label>
+                                <label>Mật khẩu mới: </label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><span class="glyphicon glyphicon-log-in"></span></div>
-                                    <input class="form-control" name="password" type="text" placeholder="New Password">
+                                    <input class="form-control" name="password" type="text" placeholder="Mật khẩu mới">
                                 </div>
-                                <button type="submit">Save</button>
+                                <button type="submit">Lưu</button>
                             </div>
                             @endforeach
                         </div>

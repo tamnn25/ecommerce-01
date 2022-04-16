@@ -26,18 +26,18 @@
                         <span>{{ $product->description }}</span>
                     </p>
                     <p class="product-comment">
-                        <span>Quantity Remaining: </span>
-                        @if ($product->quantity <= 0) <span class="text-danger">Out of stock</span>
+                        <span>Số lượng còn lại: </span>
+                        @if ($product->quantity <= 0) <span class="text-danger">Hết hàng</span>
                             @else
                             <span>{{ $product->quantity }}</span>
                             @endif
                     </p>
                     <hr>
                     @if (!empty($product->discount))
-                    <p class="product-price text-muted"><del>{{ number_format($product->price) . '   $' }}</del></p>
-                    <p class="product-price">{{ number_format($product->discount) . '$' }}</p>
+                    <p class="product-price text-muted"><del>{{ number_format($product->price) . '  VNĐ' }}</del></p>
+                    <p class="product-price">{{ number_format($product->discount) . 'VNĐ' }}</p>
                     @else
-                    <p class="product-price">{{ number_format($product->price) . '   $' }}</p>
+                    <p class="product-price">{{ number_format($product->price) . '   VNĐ' }}</p>
                     @endif
                     <hr>
                     <p>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-outline-primary" type="submit">Add Cart</button>
+                    <button class="btn btn-outline-primary" type="submit">Thêm vào giỏ hàng</button>
                     </p>
                 </form>
             </div>
@@ -61,7 +61,7 @@
     <div class="container">
         <div class="col-lg-12">
             <div class="section-title related__product__title">
-                <h2>Related Product</h2>
+                <h2>Sản phẩm liên quan</h2>
             </div>
         </div>
         <div class="row">

@@ -12,29 +12,31 @@
     </thead>
     <tbody>
         @if(!empty($orders))
-            @foreach ($orders as $key => $order)
-                <tr>
-                    <td>{{ $key+1 }}</td>
-                    <td>{{ $order->user->name }}</td>
-                    
-                    <td>{{ $order->created_at }}</td>
-                    {{-- <td>{{$order->status}}</td> --}}
-                    <td>
-                        @include('admin.orders.parts.alert_order_status')
-                    </td>
-                    <td>
-                        <a href="{{ route('admin.order.show', $order->id) }}" class="btn btn-secondary">Order Detail</a>                        
-                    </td>
-                    <td><a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-info">Update Status</a></td>
-                    <td>
-                        <form action="{{ route('admin.order.destroy', $order->id) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Delete" onclick="return confirm('Are you sure DELETE Order?')" class="btn btn-danger" />
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
+        @foreach ($orders as $key => $order)
+        <tr>
+            <td>{{ $key+1 }}</td>
+            <td>{{ $order->user->name }}</td>
+
+            <td>{{ $order->created_at }}</td>
+            {{-- <td>{{$order->status}}</td> --}}
+            <td>
+                @include('admin.orders.parts.alert_order_status')
+            </td>
+            <td>
+                <a href="{{ route('admin.order.show', $order->id) }}" class="btn btn-secondary">Order Detail</a>
+            </td>
+            <td><a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-info">Update Status</a></td>
+            <td>
+                @if(auth()->guard('admin')->user()->role_id == 1)
+                <form action="{{ route('admin.order.destroy', $order->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure DELETE Order?')" class="btn btn-danger" />
+                </form>
+                @endif
+            </td>
+        </tr>
+        @endforeach
         @endif
     </tbody>
 </table>

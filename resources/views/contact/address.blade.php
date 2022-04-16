@@ -8,10 +8,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Contact Us</h2>
+                        <h2>Liên hệ với chúng tôi</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Contact Us</span>
+                            <a href="./index.html">Trang chủ</a>
+                            <span>Liên hệ với chúng tôi</span>
                         </div>
                     </div>
                 </div>
@@ -27,21 +27,21 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_phone"></span>
-                        <h4>Phone</h4>
+                        <h4>Số điện thoại</h4>
                         <p>+842363888279</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_pin_alt"></span>
-                        <h4>Address</h4>
-                        <p>92 Quang Trung, Thạch Thang, Hải Châu, Đà Nẵng 550000, Việt Nam</p>
+                        <h4>Địa chỉ</h4>
+                        <p>92 Quang Trung, Huế, Việt Nam</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_clock_alt"></span>
-                        <h4>Open time</h4>
+                        <h4>Giờ mở cửa</h4>
                         <p>08:00 am to 22:00 pm</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="contact__widget">
                         <span class="icon_mail_alt"></span>
                         <h4>Email</h4>
-                        <p>aca@iviettech.com</p>
+                        <p>contact@bookchop.com</p>
                     </div>
                 </div>
             </div>
@@ -65,10 +65,10 @@
         <div class="map-inside">
             <i class="icon_pin"></i>
             <div class="inside-widget">
-                <h4>DaNang</h4>
+                <h4>Huế</h4>
                 <ul>
-                    <li>Phone: +842363888279</li>
-                    <li>Add: 92 Quang Trung, Thạch Thang, Hải Châu, Đà Nẵng 550000, Việt Nam</li>
+                    <li>Số điện thoại: +842363888279</li>
+                    <li>Địa chỉ: 92 Quang Trung, Huế, Việt Nam</li>
                 </ul>
             </div>
         </div>
@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact__form__title">
-                        <h2>Leave Message</h2>
+                        <h2>Để lại tin nhắn</h2>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-lg-12 text-center">
                         <textarea placeholder="Your message" name="message"  required></textarea>
-                        <button type="submit" class="site-btn">SEND MESSAGE</button>
+                        <button type="submit" class="site-btn">Gửi tin nhắn</button>
                     </div>
                 </div>
             </form>

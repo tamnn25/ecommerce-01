@@ -9,12 +9,12 @@
     <table class="table table-bordered table-hover" id="tbl-list-product">
         <thead class="thead-dark">
             <tr>
-                <th>Product Name</th>
-                <th>product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Money</th>
-                <th colspan="3">Delete</th>
+                <th>Hình ảnh sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+                <th colspan="3">Xóa</th>
             </tr>
         </thead>
         @foreach ($carts as $key => $cart)
@@ -29,22 +29,18 @@
                 </td>
                 <td class="shoping__cart__quantity">
 
-                    <div class="quantity">
-                        <div class="pro-qty">
-                            <input type="number" name="quantity" required value="{{ number_format($cart['quantity']) }}" max="{{ number_format($cart['quantity']) }}">
-                        </div>
-                    </div>
+                    <h5>{{ number_format($cart['quantity']) }}</h5>
                 </td>
                 <td>
                     <div class="product-price">
-                        {{ number_format( $cart['price'])}} $
+                        {{ number_format( $cart['price'])}} VNĐ
                     </div>
                 </td>
                 <td>
                     <div class="cart-money">
                         @php
                         $money = $cart['quantity'] * $cart['price'];
-                        echo number_format($money) . ' $';
+                        echo number_format($money) . ' VNĐ';
                         @endphp
                     </div>
                 </td>
@@ -59,17 +55,17 @@
         </tbody>
         @endforeach
     </table>
-    <div>
-        <p><b>Total: </b> {{ number_format($total) . '$' }}</p>
+    <div class="d-flex">
+        <div class="ml-auto p-2"><h4><b>Tổng giá tiền: </b> {{ number_format($total, 0, '', ',') . 'VND' }}</h4></div>
     </div>
     <div class="mt-2" style="float:right; margin-left:10px;">
         {{-- tiến hành thanh toán --}}
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">PROCEED TO CHECKOUT</button>
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">Tiến hành thanh toán</button>
     </div>
 
     <div class="float-right mt-2" style="float:left;">
         <div class="shoping__cart__btns">
-            <a class="btn btn-outline-warning" href="{{ route('index') }}">CONTINUE SHOPPING</a>
+            <a class="btn btn-outline-warning" href="{{ route('index') }}">Tiếp tục mua sắm</a>
         </div>
     </div>
     <div class="float-right mt-2" style="float:left;">

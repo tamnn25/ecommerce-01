@@ -18,10 +18,10 @@
 
             <h6><a href="#">{{ $product->name }}</a></h6>
 
-            <h5>{{!empty($product->discount) ? $product->discount.'  $' : number_format($product->price)}} $</h5>
+            <h5>{{!empty($product->discount) ? $product->discount.' VNĐ' : number_format($product->price)}} VNĐ</h5>
             <br>
             <div class="product-buy">
-                <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-primary">View More</a>
+                <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-primary">Xem Thêm</a>
             </div>
 
         </div>

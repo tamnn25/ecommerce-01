@@ -10,7 +10,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>Danh mục sản phẩm</span>
                         </div>
                         <ul style=" display:none; " >
                             @foreach ($categories as $category)
@@ -27,12 +27,8 @@
                             <div class="hero__search__form">
                                 <div class="hero__search__categories">
                                     <form action="{{ route('product.search') }}" id="formSearch" method="GET">
-                                        <div class="hero__search__categories">
-                                            All Categories
-                                            <span class="arrow_carrot-down"></span>
-                                        </div>
-                                        <input type="text" name="key" placeholder="What Would You Like To Buy ?">
-                                        <button type="submit" class="site-btn">SEARCH</button>
+                                        <input type="text" name="key" placeholder="Bạn muốn tìm mua sách nào?">
+                                        <button type="submit" class="site-btn">Tìm kiếm</button>
                                     </form>
                                 </div>    
                             </div>
@@ -42,7 +38,7 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>+84 263 888 279</h5>
-                                <span>support 24/7 time</span>
+                                <span>Hỗ trợ 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -57,10 +53,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Shopping</h2>
+                        <h2>Mua sắm</h2>
                         <div class="breadcrumb__option">
-                            <a href="{{ route('home.shop', 0) }}">Home</a>
-                            <span>Shopping</span>
+                            <a href="{{ route('home.shop', 0) }}">Trang chủ</a>
+                            <span>Mua sắm</span>
                         </div>
                     </div>
                 </div>
@@ -76,7 +72,7 @@
                         
                         <div class="sidebar__item">
                                 {{-- {{dd(request()->route()->parameters['id'])}} --}}
-                            <h4>Price</h4>
+                            <h4>Giá</h4>
                             <div class="price-range-wrap">
                                 <form action="{{ route('home.shop', (request()->route()->parameters)?request()->route()->parameters['id']:0) }}">
                                     <input type="radio" name="money" id="" value="1"> <label for="">Từ 0 - 100.000</label><br>
@@ -102,74 +98,69 @@
                         </div>
                         <hr>
                         {{-- <div class="sidebar__item sidebar__item__color--option">
-                            <h4>Colors</h4>
+                            <h4>Màu sắc</h4>
                             <div class="sidebar__item__color sidebar__item__color--white">
                                 <label for="white">
-                                    White
+                                    Trắng
                                     <input type="radio" id="white">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--gray">
                                 <label for="gray">
-                                    Gray
+                                    Xám
                                     <input type="radio" id="gray">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--red">
                                 <label for="red">
-                                    Red
+                                Đỏ
                                     <input type="radio" id="red">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--black">
                                 <label for="black">
-                                    Black
+                                Đen
                                     <input type="radio" id="black">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--blue">
                                 <label for="blue">
-                                    Blue
+                                    Xanh da trời
                                     <input type="radio" id="blue">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--green">
                                 <label for="green">
-                                    Green
+                                    Xanh lá
                                     <input type="radio" id="green">
                                 </label>
                             </div>
                         </div> --}}
                         {{-- <div class="sidebar__item">
-                            <h4>Popular Size</h4>
+                            <h4>Size</h4>
                             <div class="sidebar__item__size">
                                 <label for="large">
-                                    Large
+                                    Lớn
                                     <input type="radio" id="large">
                                 </label>
                             </div>
                             <div class="sidebar__item__size">
                                 <label for="medium">
-                                    Medium
+                                    Vừa
                                     <input type="radio" id="medium">
                                 </label>
                             </div>
                             <div class="sidebar__item__size">
                                 <label for="small">
-                                    Small
+                                    Nhỏ
                                     <input type="radio" id="small">
                                 </label>
                             </div>
-                            <div class="sidebar__item__size">
-                                <label for="tiny">
-                                    Tiny
-                                    <input type="radio" id="tiny">
-                                </label>
-                            </div>
+
                         </div> --}}
                         <div class="sidebar__item">
                             <div class="latest-product__text">
-                                <h4>Latest Products</h4>
+                                <h4>Sản phẩm mới nhất</h4>
                                  <div class="latest-product__slider owl-carousel">
                                     @for ($i = 1; $i <= 3; $i++) 
                                         <div class="latest-prdouct__slider__item">
@@ -185,9 +176,7 @@
                                                         <div class="latest-product__item__text">
                                                             
                                                             <h6 >  {{ $item->name }}</h6>
-                                                <span>{{ number_format($item->price ) . '   $'  }}</span>
-
-
+                                                <span>{{ number_format($item->price ) . '   VNĐ'  }}</span>
                                                         </div>
                                                     </a>
                                             @endforeach
@@ -203,7 +192,7 @@
                 <div class="col-lg-9 col-md-7">
                     {{-- <div class="product__discount">
                         <div class="section-title product__discount__title">
-                            <h2>Promotion products</h2>
+                            <h2>Sản phẩm khuyến mãi</h2>
                         </div>
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
@@ -228,7 +217,7 @@
                                 {{-- <div class="filter__sort">
                                     <label for="amount">Sắp sếp theo</label>
                                    
-                                    <span>Sort By</span>
+                                    <span>Sắp sếp theo</span>
                                     <select name="sortBy">
                                         <option value="asc"><a href="{{ route('home.shop', ['sortBy' => 'asc'])  }}">a -> z</a></option>
                                         <option value="desc"><a href="{{ route('home.shop', ['sortBy' => 'desc']) }}">z -> a</a></option>
@@ -243,7 +232,7 @@
                                         $soluong = count($products);
                                         echo $soluong;
                                     @endphp
-                                    </span> <strong>Products</strong></h6>
+                                    </span> <strong>Sản phẩm</strong></h6>
                                 
                                 </div>
                             </div>
@@ -270,9 +259,9 @@
                                         </div>
                                         <div class="product__item__text">
                                             <h6><a href="{{ route('product.detail', $product['id']) }}"><strong>{{ $product->name }}</strong></a></h6>
-                                            <span>{{ number_format($product->price ) . '   $'  }}</span>
+                                            <span>{{ number_format($product->price ) . '   VNĐ'  }}</span>
                                             <div class="product-buy">
-                                                <a href="{{ route('product.detail', $product['id']) }}" class="btn  btn-outline-primary">View More</a>
+                                                <a href="{{ route('product.detail', $product['id']) }}" class="btn  btn-outline-primary">Xem Thêm</a>
                                             </div>
                                         </div>
                                     </div>
