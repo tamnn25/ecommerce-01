@@ -48,7 +48,7 @@ Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
 Route::group(['prefix' => 'cart', 'as' => 'cart.'], function () {
     Route::get('/', [CartController::class, 'CartInfo'])->name('cart-info');
     Route::post('cart/{id}', [CartController::class, 'addCart'])->name('add-cart');
-    Route::get('checkout', [CartController::class, 'checkout'])->name('checkout')->middleware('check_order');
+    Route::get('checkout', [CartController::class, 'checkout'])->name('checkout');
     Route::post('checkout-complete', [CartController::class, 'Complete'])->name('checkout-complete');
     Route::post('send-verify-code', [CartController::class, 'sendVerifyCode'])->middleware(['auth'])->name('send-verify-code');
     Route::post('confirm-verify-code', [CartController::class, 'confirmVerifyCode'])->middleware(['auth'])->name('confirm-verify-code');

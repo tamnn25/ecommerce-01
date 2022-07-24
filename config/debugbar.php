@@ -182,7 +182,7 @@ return [
      |
      */
 
-    'inject' => true,
+    'inject' => false,
 
     /*
      |--------------------------------------------------------------------------
@@ -214,5 +214,5 @@ return [
      | Switches between light and dark theme. If set to auto it will respect system preferences
      | Possible values: auto, light, dark
      */
-    'theme' => env('DEBUGBAR_THEME', 'auto'),
+    'theme' => env('    ', 'auto'),
 ];

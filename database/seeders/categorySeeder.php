@@ -15,7 +15,6 @@ class categorySeeder extends Seeder
      */
     public function run()
     {
-        //
         $date = date('Y-m-d H:i:s');
         $data = [
 
@@ -27,7 +26,6 @@ class categorySeeder extends Seeder
             ['name' => 'Tiểu sử - Hồi ký', 'created_at' => $date, 'updated_at' => $date],
             ['name' => 'Sách ngoại ngữ', 'created_at' => $date, 'updated_at' => $date],
             ['name' => 'Sách mới', 'created_at' => $date, 'updated_at' => $date],
-
         ];
 
         DB::table('categories')->insert($data);

@@ -192,7 +192,7 @@ abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
         }
 
         if (!$reversePath = $this->getReversePath($message)) {
-            $this->throwException(new Swift_TransportException('Không thể gửi tin nhắn mà không có địa chỉ người gửi'));
+            $this->throwException(new Swift_TransportException('Cannot send message without a sender address'));
         }
 
         $to = (array) $message->getTo();

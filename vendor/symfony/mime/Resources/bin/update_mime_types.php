@@ -44,16 +44,16 @@ foreach ($xml as $node) {
 }
 
 // load current map
-$data = file_get_contents($output = __DIR__ . '/../../MimeTypes.php');
+$data = file_get_contents($output = __DIR__.'/../../MimeTypes.php');
 $current = [];
 $pre = '';
 $post = '';
 foreach (explode("\n", $data) as $line) {
     if (!preg_match("{^        '([^']+/[^']+)' => \['(.+)'\],$}", $line, $matches)) {
         if (!$current) {
-            $pre .= $line . "\n";
+            $pre .= $line."\n";
         } else {
-            $post .= $line . "\n";
+            $post .= $line."\n";
         }
         continue;
     }
@@ -65,7 +65,7 @@ $data = $pre;
 // reverse map
 // we prefill the extensions with some preferences for content-types
 $exts = [
-    'asice' => ['application/$.etsi.asic-e+zip'],
+    'asice' => ['application/vnd.etsi.asic-e+zip'],
     'bz2' => ['application/x-bz2'],
     'csv' => ['text/csv'],
     'ecma' => ['application/ecmascript'],
@@ -77,8 +77,8 @@ $exts = [
     'jar' => ['application/x-java-archive'],
     'jpg' => ['image/jpeg'],
     'js' => ['text/javascript'],
-    'keynote' => ['application/$.apple.keynote'],
-    'key' => ['application/$.apple.keynote'],
+    'keynote' => ['application/vnd.apple.keynote'],
+    'key' => ['application/vnd.apple.keynote'],
     'm3u' => ['audio/x-mpegurl'],
     'm4a' => ['audio/mp4'],
     'md' => ['text/markdown', 'text/x-markdown'],
@@ -89,7 +89,7 @@ $exts = [
     'ogg' => ['audio/ogg'],
     'pdf' => ['application/pdf'],
     'php' => ['application/x-php'],
-    'ppt' => ['application/$.ms-powerpoint'],
+    'ppt' => ['application/vnd.ms-powerpoint'],
     'rar' => ['application/x-rar-compressed'],
     'hqx' => ['application/stuffit'],
     'sit' => ['application/x-stuffit', 'application/stuffit'],
@@ -101,7 +101,7 @@ $exts = [
     'wav' => ['audio/wav'],
     'wma' => ['audio/x-ms-wma'],
     'wmv' => ['audio/x-ms-wmv'],
-    'xls' => ['application/$.ms-excel'],
+    'xls' => ['application/vnd.ms-excel'],
     'zip' => ['application/zip'],
 ];
 
@@ -148,14 +148,14 @@ foreach (explode("\n", $data) as $line) {
                 $updated .= sprintf("        '%s' => ['%s'],\n", $ext, implode("', '", array_unique($mimeTypes)));
             }
         }
-        $updated .= $line . "\n";
+        $updated .= $line."\n";
         continue;
     }
     $state = 1;
 }
 
-$updated = preg_replace('{Updated from upstream on .+?\.}', 'Updated from upstream on ' . date('Y-m-d'), $updated, -1);
+$updated = preg_replace('{Updated from upstream on .+?\.}', 'Updated from upstream on '.date('Y-m-d'), $updated, -1);
 
-file_put_contents($output, rtrim($updated, "\n") . "\n");
+file_put_contents($output, rtrim($updated, "\n")."\n");
 
 echo "Done.\n";

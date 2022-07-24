@@ -37,7 +37,7 @@ class OrderUserController extends Controller
     { // chi tiết đơn hàng vừa mua
         $data = [];
         $order = Order::where('id', $id)->first();
-        
+
         $total = $this->calculateTotalCart($order);
 
         $data['order'] = $order;
@@ -59,7 +59,8 @@ class OrderUserController extends Controller
 
 
     public function profile()
-    { // thông tin khách hàng
+    { 
+        // thông tin khách hàng
         $data = [];
         $user = Auth::user();
 
@@ -70,10 +71,8 @@ class OrderUserController extends Controller
 
             $data['users'] = $users;
 
-            // dd($users);
             return view('profile.index', $data);
         } else {
-
             echo 'try again';
         }
     }
