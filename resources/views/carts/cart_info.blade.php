@@ -56,11 +56,14 @@
         @endforeach
     </table>
     <div class="d-flex">
-        <div class="ml-auto p-2"><h4><b>Tổng giá tiền: </b> {{ number_format($total, 0, '', ',') . 'VND' }}</h4></div>
+        <div class="ml-auto p-2">
+            <h4><b>Tổng giá tiền: </b> {{ number_format($total, 0, '', ',') . 'VND' }}</h4>
+        </div>
     </div>
     <div class="mt-2" style="float:right; margin-left:10px;">
         {{-- tiến hành thanh toán --}}
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">Tiến hành thanh toán</button>
+        <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">Tiến hành thanh toán</button> -->
+        <a class="btn btn-outline-success" href="{{ route('cart.checkout') }}">Tiến hành thanh toán</a>
     </div>
 
     <div class="float-right mt-2" style="float:left;">

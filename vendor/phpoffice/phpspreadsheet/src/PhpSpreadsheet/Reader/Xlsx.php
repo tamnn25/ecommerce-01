@@ -401,7 +401,7 @@ class Xlsx extends BaseReader
                     $propertyReader->readCustomProperties($this->getFromZipArchive($zip, "{$rel['Target']}"));
 
                     break;
-                    //Ribbon
+                //Ribbon
                 case 'http://schemas.microsoft.com/office/2006/relationships/ui/extensibility':
                     $customUI = $rel['Target'];
                     if ($customUI !== null) {
@@ -447,7 +447,7 @@ class Xlsx extends BaseReader
                                 $worksheets[(string) $ele['Id']] = $ele['Target'];
 
                                 break;
-                                // a vbaProject ? (: some macros)
+                            // a vbaProject ? (: some macros)
                             case 'http://schemas.microsoft.com/office/2006/relationships/vbaProject':
                                 $macros = $ele['Target'];
 
@@ -1142,7 +1142,7 @@ class Xlsx extends BaseReader
                                                     if (isset($images[$imageKey])) {
                                                         $objDrawing->setPath(
                                                             'zip://' . File::realpath($pFilename) . '#' .
-                                                                $images[$imageKey],
+                                                            $images[$imageKey],
                                                             false
                                                         );
                                                     }
@@ -1212,7 +1212,7 @@ class Xlsx extends BaseReader
                                                     if (isset($images[$imageKey])) {
                                                         $objDrawing->setPath(
                                                             'zip://' . File::realpath($pFilename) . '#' .
-                                                                $images[$imageKey],
+                                                            $images[$imageKey],
                                                             false
                                                         );
                                                     }
@@ -1514,7 +1514,7 @@ class Xlsx extends BaseReader
             // Default content types
             foreach ($contentTypes->Default as $contentType) {
                 switch ($contentType['ContentType']) {
-                    case 'application/$.openxmlformats-officedocument.spreadsheetml.printerSettings':
+                    case 'application/vnd.openxmlformats-officedocument.spreadsheetml.printerSettings':
                         $unparsedLoadedData['default_content_types'][(string) $contentType['Extension']] = (string) $contentType['ContentType'];
 
                         break;
@@ -1524,7 +1524,7 @@ class Xlsx extends BaseReader
             // Override content types
             foreach ($contentTypes->Override as $contentType) {
                 switch ($contentType['ContentType']) {
-                    case 'application/$.openxmlformats-officedocument.drawingml.chart+xml':
+                    case 'application/vnd.openxmlformats-officedocument.drawingml.chart+xml':
                         if ($this->includeCharts) {
                             $chartEntryRef = ltrim($contentType['PartName'], '/');
                             $chartElements = simplexml_load_string(
@@ -1552,8 +1552,8 @@ class Xlsx extends BaseReader
 
                         break;
 
-                        // unparsed
-                    case 'application/$.ms-excel.controlproperties+xml':
+                    // unparsed
+                    case 'application/vnd.ms-excel.controlproperties+xml':
                         $unparsedLoadedData['override_content_types'][(string) $contentType['PartName']] = (string) $contentType['ContentType'];
 
                         break;

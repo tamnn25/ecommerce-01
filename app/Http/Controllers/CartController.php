@@ -124,13 +124,9 @@ class CartController extends Controller
 
                     $orderDetail = [
                         'product_id' => $productId,
-
                         'order_id' => $orderId,
-
                         'price' => $price,
-
                         'quantity' => $quantity,
-
                         'total' => $price * $quantity,
                     ];
 
@@ -150,7 +146,6 @@ class CartController extends Controller
             return redirect()->route('order_user.list_order')->with('success', 'Your Order was successful!');
         } catch (Exception $exception) {
             DB::rollBack();
-
             return redirect()->back()->with('error', $exception->getMessage());
         }
     }
@@ -200,9 +195,6 @@ class CartController extends Controller
 
                 return response()->json(['message' => 'Please check email.']);
             } catch (\Exception $exception) {
-
-                // rollback data and dont insert into table
-                // echo $exception->getMessage();
                 info($exception);
                 DB::rollBack();
 
@@ -223,13 +215,10 @@ class CartController extends Controller
         //  validate code
 
         DB::beginTransaction();
-
         try {
             $orderVerify->status = OrderVerify::STATUS[1];
             $orderVerify->save();
-
             DB::commit();
-
             // add step by step to SESSION
             session(['step_by_step' => 2]);
 
@@ -244,7 +233,6 @@ class CartController extends Controller
     public function destroy(Request $request)
     {
         $id = $request->id;
-        // dd($id);die;
         $sessionAll = Session::all();
 
         $carts = empty($sessionAll['carts']) ? [] : $sessionAll['carts'];
