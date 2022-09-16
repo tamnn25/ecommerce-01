@@ -5,15 +5,6 @@
             <div class="section-title">
                 <h2>Sản phẩm của chúng tôi</h2>
             </div>
-            <!-- <div class="featured__controls">
-                    <ul>
-                        @foreach ($categories as $category)
-                            <li class="active" data-filter="*">
-                                <a style="color:black" href="javascript:;" onclick="getProductByCategory({{ $category->id }})"> {{ $category->name }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-            </div> -->
         </div>
 
         <div class="col-lg-12 d-flex flex-wrap">
