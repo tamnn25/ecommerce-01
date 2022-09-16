@@ -6,10 +6,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <marquee behavior="" direction="">
-                            <li><i class="fa fa-envelope text-white"></i> contact@barnesbook.vn</li>
-                            <li>Miễn phí ship cho đơn hàng trên 1 triệu đồng</li>
-                            </marquee>
+                            <li><i class="fa fa-envelope text-white"></i>Theanstationery@gmail.com</li>
+                            <li>Thành viên của The An Stationery sẽ nhận được ưu đãi hấp dẫn</li>
                         </ul>
                     </div>
                 </div>
@@ -86,24 +84,30 @@
         <div class="row" >
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{{ route('index')}}"><img src="{{ asset('shop/img/logo.png') }}" height="80px" alt=""></a>
+                    <a href="{{ route('index')}}"><img src="{{ asset('shop/img/logothean.jpg') }}" height="80px" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
                         <li class="active"><a href="{{ route('index')  }}">Trang chủ</a></li>
-
-                        <li><a href="{{ route('home.shop', 0) }}">Cửa hàng</a></li>
-                        <li><a href="#">Sách mới</a>
+                        <li><a href="{{ route('home.shop', 0) }}">Sản phẩm</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="#">Văn học nước ngoài</a></li>
-                                <li><a href="#">Tâm lý</a></li>
-                                <li><a href="#">Kỹ năng sống</a></li>
-                                <li><a href="#">Từ điển</a></li>
+                            @foreach ($categories as $category)
+                                <ul>
+                                    <li class="active" data-filter="*">
+                                        <a href="{{ url('home/shop/'. $category->id)}}"><span>{{ $category->name }}</span></a>
+                                    </li>
+                                </ul>
+                            @endforeach
                             </ul>
                         </li>
-                        <li><a href="">Blog</a></li>
+                        <li><a href="">Kiến thức</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="#">Kỹ năng sống</a></li>
+                                <li><a href="#">Những cuốn sách hay</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">Liên Hệ</a></li>
                     </ul>
                 </nav>
@@ -123,4 +127,5 @@
 
 
 </header>
+<hr style="color:#F7941F; height:4px">
 <!-- Header Section End -->

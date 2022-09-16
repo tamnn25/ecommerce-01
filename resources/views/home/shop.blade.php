@@ -32,7 +32,7 @@
                                                 All Categories
                                                 <span class="arrow_carrot-down"></span>
                                             </div> -->
-                                            <input type="text" name="key" placeholder="Bạn muốn tìm mua sách nào?">
+                                            <input type="text" name="key" placeholder="Nhập sản phẩm cần tìm">
                                             <button type="submit" class="site-btn">Tìm Kiếm</button>
                                         </form>
                                     </div>    
@@ -42,8 +42,8 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="hero__search__phone__text">
-                                    <h5>+84 263 888 279</h5>
-                                    <span>Hỗ trợ 24/7</span>
+                                    <h5>0909 567 893</h5>
+                                    <span>Hỗ trợ hotline 24/7</span>
                                 </div>
                             </div>
                         </div>
