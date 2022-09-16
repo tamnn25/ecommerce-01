@@ -14,9 +14,37 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\Admin\UpdateProductRequest;
+use App\Utils\UploadFile;
 
 class ProductController extends Controller
 {
+    /**
+     * Define Variable
+     */
+    private $folderThumb;
+    private $folderImage;
+    private $product;
+    private $category;
+
+    /**
+     * Constructor
+     * 
+     * @param Product $product
+     * @param Category $category
+     * 
+     * @description
+     * Product $product (Automatic Injection)
+     * Category $category (Automatic Injection)
+     */
+    public function __construct(Product $product, Category $category)
+    {
+        $this->category = $category;
+        $this->product = $product;
+
+        // Set Path for folder Upload File
+        $this->folderThumb = config('common.folder_product_thumb_upload');
+        $this->folderImage = config('common.folder_product_img_upload');
+    }
 
     /**
      * Display a listing of the resource.
@@ -37,16 +65,6 @@ class ProductController extends Controller
         if (!empty($request->category_id)) {
             $product = $product->where('category_id', $request->category_id);
         }
-
-        //search price
-        // if(!empty($request->status)) {
-        //     $product = $product->where('status', $request->status);
-        // }
-        // if(!empty($request->price)){
-        //     $product = $product->where('price', 'like', '%' . $request->price. '%')
-        //                         ->orderby('price','asc')
-        //                         ->paginate(8);
-        // }
 
         $product = $product->orderBy('id', 'desc');
 
@@ -89,61 +107,37 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        $imagesPath = null;
-        if (
-            $request->hasFile('image')
-            && $request->file('image')->isValid()
-        ) {
-            // Nếu có thì thục hiện lưu trữ file vào public/images
-            $image = $request->file('image');
-            $extension = $request->image->extension();
+        // Upload Thumbnail
+        $thumbnailPath = UploadFile::upload($request->thumbnail, $this->folderThumb);
 
-            $fileName = 'image_' . time() . '.' . $extension;
-            $image->move('products', $fileName);
-            $imagesPath = 'products/' . $fileName;
-        }
-        // dd($request->url);
-        $listProductImages = [];
-        $files = $request->file('url');
-        if ($request->hasFile('url')) {
-            foreach ($files as $file) {
-                // Nếu có thì thục hiện lưu trữ file vào public/url
-                // $image = $request->file('url');
-                $extension = $file->extension();
-                $fileName = 'url_' . time() . rand() . '.' . $extension;
-                $file->move('product_images', $fileName);
-                $listProductImages[] = 'product_images/' . $fileName;
-            }
-        }
+        // Upload Images
+        $files = $request->images;
+        $productImages = UploadFile::upload($files, $this->folderImage);
+        $productImages = empty($productImages) ? [] : $productImages;
 
+        // Define Variable
         $dataInsert = [
             'name' => $request->name,
+            'thumbnail' => $thumbnailPath,
             'description' => $request->description,
-            'thumbnail' => $imagesPath,
-            'price' => $request->price,
-            // 'hot'=> $request->hot,
+            'content' => $request->content,
             'quantity' => $request->quantity,
-            // 'status' => $request->status,
+            'price' => $request->price,
+            'images' => json_encode($productImages),
             'category_id' => $request->category_id,
         ];
 
-        DB::beginTransaction();
-
         try {
-            // insert into table posts
-            $product = Product::create($dataInsert);
-
-            DB::commit();
+            // insert into table products
+            $this->product->create($dataInsert);
 
             // success
-            return redirect()->route('admin.product.index')->with('success', 'Insert successful!');
+            return redirect()->route('admin.product.index')
+                ->with('success', 'Insert successful!');
         } catch (\Exception $ex) {
-            echo $ex->getMessage();
-            exit();
-
-            DB::rollback();
-
-            return redirect()->back()->with('error', $ex->getMessage());
+            return redirect()->back()
+                ->with('error', $ex->getMessage())
+                ->withInput();
         }
     }
 
@@ -170,7 +164,6 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
         $data = [];
         $categories = Category::pluck('name', 'id')
             ->toArray();
@@ -190,90 +183,41 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, $id)
     {
-        $product = Product::find($id);
+        // Get Product
+        $product = $this->product
+            ->findOrFail($id);
 
-        $productDetailId = !empty($product->product_detail) ? $product->product_detail->id : null;
-        $imagesOld = $product->image;
-
-        // get list product image from DB
-        $listProductImageDB = [];
-        if (!empty($product->product_images)) {
-            foreach ($product->product_images as $img) {
-                $listProductImageDB[] = $img->url;
-            }
-        }
-
-        // get list product image from FORM
-        $listProductImageForm = [];
-        if (!empty($request->url)) {
-            foreach ($request->url as $img) {
-                $listProductImageForm[] = $img;
-            }
-        }
-
-        $imagePath = null;
-        if (
-            $request->hasFile('image')
-            && $request->file('image')->isValid()
-        ) {
-            // Nếu có thì thục hiện lưu trữ file vào public/images
-            $image = $request->file('image');
-            $extension = $request->image->extension();
-            $fileName = 'image_' . time() . '.' . $extension;
-            // $imagePath = $image->move('storage/products', $fileName);
-            $imagePath = $image->move('products', $fileName);
-
-            $product->thumbnail = 'products/' . $fileName;
-            Log::info('imagePath: ' . $imagePath);
-        }
-
-        // $listProductImages = [];
-        // $files = $request->file('url');
-        // if ($request->hasFile('url')) {
-        //     foreach ($files as $file) {
-        //         // Nếu có thì thục hiện lưu trữ file vào public/url
-        //         // $image = $request->file('url');
-        //         $extension = $file->extension();
-        //         $fileName = 'url_' . time() . rand() . '.' . $extension;
-        //         $file->move('product_images', $fileName);
-        //         $listProductImages[] = 'product_images/' . $fileName;
-        //     }
-        // }
-        // update data for table product
+        /**
+         * Update data for table products
+         * 
+         * Set value for attribute of model Product
+         */
         $product->name = $request->name;
         $product->description = $request->description;
-
-        $product->price = $request->price;
+        $product->content = $request->content;
         $product->quantity = $request->quantity;
-        $product->thumbnail = $imagePath;
+        $product->price = $request->price;
         $product->category_id = $request->category_id;
-   
-        // lưu bộ nhớ đệm, ko lưu vào DB.
-        DB::beginTransaction();
 
-        //dd($imagePath);
+        // Check have Upload Thumbnail ?
+        if (!empty($request->thumbnail)) {
+            // Upload file Thumbnail
+            $thumbnailPath = UploadFile::upload($request->thumbnail, $this->folderThumb);
+
+            // Set value for attribute "thumbnail"
+            $product->thumbnail = $thumbnailPath;
+        }
 
         try {
+            // Update Data
             $product->save();
-
-            DB::commit();
-
-            // SAVE OK then delete OLD file
-            if (
-                File::exists(public_path($imagesOld))
-                && $imagePath != null
-            ) {
-                File::delete(public_path($imagesOld));
-            }
             // success
-            return redirect()->route('admin.product.index')->with('success', 'Update successful!');
+            return redirect()->route('admin.product.index')
+                ->with('success', 'Update Product successful!');
         } catch (\Exception $ex) {
-
-            // DB::rollback();
-
-            echo $ex->getMessage();
-            // return redirect()->back()->with('error', $ex->getMessage());
-            //return redirect()->route('product.index')->with('success', 'Update successful!');
+            return redirect()->back()
+                ->with('error', $ex->getMessage())
+                ->withInput();
         }
     }
 

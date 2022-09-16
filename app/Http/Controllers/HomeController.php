@@ -10,15 +10,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    //
     public function index()
     {
-        $products       =   Product::get();
+        $products = Product::get();
         $category = Category::get();
-        // -----------------    get  dữ liệu khách hàng  đánh giá ra ngoài home-----------------------
-        // -------------------------
-        $productLimit   =   Product::orderBy('created_at', 'desc')->limit(12)->get();
-        // sản phẩm  mới cập nhập   
+        $productLimit = Product::orderBy('created_at', 'desc')->limit(12)->get();
 
         return view('home.homepage')->with([
             'products'       => $products,
@@ -27,11 +23,8 @@ class HomeController extends Controller
         ]);
     }
 
-
-
     public function shop(Request $request, $id)
     {
-
         $money = !empty($request->money) ? $request->money : '';
         $categories = Category::all();
 

@@ -11,7 +11,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $data = [];
-        $users = User::orderBy('id', 'desc')->paginate(8);
+        $users = User::orderBy('id', 'desc')->paginate(9);
 
         if (!empty($request->name)) {
 
@@ -28,7 +28,7 @@ class CustomerController extends Controller
 
         $data['users'] = $users;
 
-        return view('admin.customer.index', $data);
+        return view('admin.users.index', $data);
     }
 
     public function destroy($id)

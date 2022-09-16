@@ -32,9 +32,9 @@ class UserController extends Controller
                 ->orderBy('id', 'desc')
                 ->paginate(4);
         }
-        $data['admins'] = $admins;
+        $data['users'] = $admins;
 
-        return view('admin.user.index', $data);
+        return view('admin.users.index', $data);
     }
 
     /**
@@ -44,7 +44,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -79,7 +79,7 @@ class UserController extends Controller
         $users = Admin::find($id);
 
         $data['users'] = $users;
-        return view('admin.user.edit', $data);
+        return view('admin.users.edit', $data);
     }
 
     /**
@@ -117,7 +117,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
         DB::beginTransaction();
 
         try {
@@ -130,7 +129,7 @@ class UserController extends Controller
         } catch (\Exception $ex) {
             echo $ex->getMessage();
             DB::rollBack();
-            
+
             return redirect()->back()->with('error', $ex->getMessage());
         }
     }

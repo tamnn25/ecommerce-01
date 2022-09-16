@@ -4,7 +4,7 @@
 
     <!-- SUB -->
     <div class="">
-            <img src="shop/img/banner/SUB1.PNG" style="margin-bottom: -50px; height: 90px">
+        <img src="shop/img/banner/SUB1.PNG" style="margin-bottom: -50px; height: 90px">
     </div>
     <!-- end sub -->
 
@@ -14,7 +14,7 @@
 
     </section>
     <!-- Featured Section End -->
-    
+
     <!-- Banner Begin -->
     <div class="banner">
 
@@ -65,7 +65,7 @@
         </div>
     </div>
     <!-- Banner End -->
-    
+
     <!-- Blog Section Begin -->
     <section class="from-blog spad">
 
