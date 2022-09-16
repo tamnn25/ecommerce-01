@@ -10,28 +10,29 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Requests;
 use App\Models\Admin;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // /*
-    // |--------------------------------------------------------------------------
-    // | Login Controller
-    // |--------------------------------------------------------------------------
-    // |
-    // | This controller handles authenticating users for the application and
-    // | redirecting them to your home screen. The controller uses a trait
-    // | to conveniently provide its functionality to your applications.
-    // |
-    // */
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
 
     // use AuthenticatesUsers;
 
-    // /**
-    //  * Where to redirect users after login.
-    //  *
-    //  * @var string
-    //  */
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
     protected $redirectTo = '/admin/login';
 
     /**
@@ -68,9 +69,10 @@ class AuthController extends Controller
 
             \Session::put('success', 'You are Login successfully!!');
 
-            return redirect()->route('admin.dashboard');
+            $categories = Category::get();
+            $data['categories'] = $categories;
+            return redirect()->route('admin.dashboard', $data);
         } else {
-
             return back()->with('error', 'your username and password are wrong.');
         }
     }

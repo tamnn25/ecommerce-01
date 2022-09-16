@@ -1,0 +1,22 @@
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+  color: #000;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+button.select2-selection__choice__remove span {
+  color: red;
+}
+
+span.select2.select2-container.select2-container--default.select2-container--below {
+  height: calc(2.25rem + 2px);
+  width: 100% !important;
+}
+
+textarea.select2-search__field {
+  line-height: 100%;
+}
+
+span.select2-selection.select2-selection--multiple {
+  padding-top: 5px;
+}
