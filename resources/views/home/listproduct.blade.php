@@ -1,4 +1,4 @@
- <div class="container">
+ <div class="">
 
     <div class="row">
         <div class="col-lg-12">
@@ -16,33 +16,30 @@
             </div> -->
         </div>
 
-
-
-        <div class="col-lg-12">
-        @if(!empty($products))
-            @foreach ($products as $product)
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="featured__item">
-                    <div class="featured__item__text">                          
-                        <div class="product-image" style="margin-bottom: 10px">
-                            <a href="{{ route('product.detail', $product['id']) }}"><img src="{{ $product['thumbnail'] }}" alt="image" style="height:240px"></a>
+        <div class="col-lg-12 d-flex flex-wrap">
+            @if(!empty($products))
+                @for ($i = 1; $i <= 8; $i++) 
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="{{ asset('/'.$products[$i]->thumbnail) }}" style="border: 1px solid blanchedalmond;">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="{{ route('product.detail', $products[$i]) }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="{{ route('product.detail', $products[$i]) }}"><strong>{{ $products[$i]->name }}</strong></a></h6>
+                                <span>{{ number_format($products[$i]->price ) . '   VNĐ'  }}</span>
+                                <div class="product-buy">
+                                    <a href="{{ route('product.detail', $products[$i]) }}" class="btn btn-outline-success">Xem Thêm</a>
+                                </div>
+                            </div>
                         </div>
-                        <h5 style="margin-bottom: 10px">{{ $product['name'] }}</h5>
-                        <div class="product-description">
-                            <h4 style="margin-bottom: 10px">{{ number_format($product->price) }} VNĐ</h4>
-                        </div>
-                        <div class="product-buy">
-                            <a href="{{ route('product.detail', $product['id']) }}" class="btn btn-outline-primary">Xem thêm</a>
-                        </div>
-                    </div>                                            
-                </div>
-            </div>
-            @endforeach
+                    </div>
+                @endfor
             @endif
         </div>
-
-
-
     </div> 
      <div class="row featured__filter" id="loadProduct">
          {{-- phần để slide đổ thông tin sản phẩn ra  không dc xóa --}}

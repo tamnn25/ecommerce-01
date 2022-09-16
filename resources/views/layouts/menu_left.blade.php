@@ -10,10 +10,7 @@
                     @foreach ($categories as $category)
                     <ul>
                         <li class="active" data-filter="*">
-                            <i>
-                                <a href="{{ url('home/shop/'. $category->id)}}"><i>{{ $category->name }}</i></a>
-                            </i>
-
+                            <a href="{{ url('home/shop/'. $category->id)}}"><span>{{ $category->name }}</span></a>
                         </li>
                     </ul>
                     @endforeach
@@ -29,7 +26,7 @@
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
                                 </div> -->
-                            <input type="text" name="key" placeholder="Bạn muốn mua sách nào?">
+                            <input type="text" name="key" placeholder="Nhập sản phẩm cần mua">
                             <button type="submit" class="site-btn">Tìm Kiếm</button>
                         </form>
                     </div>
@@ -39,21 +36,12 @@
                             <img src="{{ asset('shop/img/call.png') }}" alt="">
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
-                            <span>Hỗ trợ 24/7</span>
+                            <h5>0909 567 893</h5>
+                            <span>Hỗ trợ hotline 24/7</span>
                         </div>
                     </div>
                 </div>
                 @include('layouts.slider_bar')
-
-                {{-- <div class="hero__item set-bg" data-setbg="{{ asset('shop/img/hero/vegetables.jpg') }}">
-                <div class="hero__text">
-                    <span>FRUIT FRESH</span>
-                    <h2 style="color: white">Vegetable <br />100% Organic</h2>
-                    <p>Free Pickup and Delivery Available</p>
-                    <a href="{{route('home.shop',0)}}" class="primary-btn">SHOP NOW</a>
-                </div>
-            </div> --}}
         </div>
     </div>
     </div>

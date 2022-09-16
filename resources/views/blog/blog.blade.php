@@ -58,7 +58,7 @@
 <!-- Hero Section End -->
 
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg" data-setbg="{{ asset('shop/img/breadcrumb.jpg') }}">
+<section class="breadcrumb-section set-bg" data-setbg="{{ asset('shop/img/breadcrumb-1.jpg') }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">

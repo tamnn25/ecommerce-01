@@ -1,13 +1,13 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://1.bp.blogspot.com/-anXl3FTQYkI/X0Jm8e1tQqI/AAAAAAAAx_c/7HAuRgJ-WZ8eGAYLXLn3OXi-XMStqpzJwCLcBGAsYHQ/s1600/Quyen-Sach%2B%25282%2529.jpg" class="d-block w-100" height="400px" alt="...">
+      <img src="https://vanphongphamquangngai.com/wp-content/uploads/sites/97/2021/03/banner-van-phong-pham.jpg" class="d-block w-100" height="400px" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://listsach.com/wp-content/uploads/2019/11/top-sach-hay-tai-chinh-nen-doc-2020-list-sach-tai-chinh.jpg" class="d-block w-100" height="400px" alt="...">
+      <img src="https://bizweb.dktcdn.net/100/421/857/themes/821563/assets/slider_1.jpg?1656648710371" class="d-block w-100" height="400px" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://img4.thuthuatphanmem.vn/uploads/2020/12/26/hinh-anh-ve-sach-mo-ra_051502949.jpg" class="d-block w-100" height="400px" alt="...">
+      <img src="https://vppminhanh.vn/CMS/Content/1.jpg" class="d-block w-100" height="400px" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
