@@ -38,7 +38,7 @@
             <!-- <td><a href="{{ route('admin.user.show', $user->id) }}" class="btn btn-secondary btn-common" title="{{ __('message.detail_user') }}"><i class="fas fa-search-plus"></i> {{ __('message.detail') }}</a></td> -->
             <!-- <td><a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-info btn-common" title="{{ __('message.edit_user') }}"><i class="fas fa-edit"></i> {{ __('message.edit') }}</a></td> -->
             <td>
-                <form action="{{ route('admin.customer.destroy', $user->id) }}" method="post">
+                <form action="{{ route('admin.user.destroy', $user->id) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-common" onclick="return confirm('{{ __('message.confirm_delete_user') }}')" title="{{ __('message.delete_user') }}"><i class="fas fa-trash-alt"></i> {{ __('message.delete') }}</button>

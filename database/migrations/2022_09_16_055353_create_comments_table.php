@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('rate');
+            $table->text('content')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

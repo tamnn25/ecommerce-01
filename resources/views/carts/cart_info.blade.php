@@ -62,8 +62,8 @@
     </div>
     <div class="mt-2" style="float:right; margin-left:10px;">
         {{-- tiến hành thanh toán --}}
-        <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">Tiến hành thanh toán</button> -->
-        <a class="btn btn-outline-success" href="{{ route('cart.checkout') }}">Tiến hành thanh toán</a>
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">Tiến hành thanh toán</button>
+        <!-- <a class="btn btn-outline-success" href="{{ route('cart.checkout') }}">Tiến hành thanh toán</a> -->
     </div>
 
     <div class="float-right mt-2" style="float:left;">

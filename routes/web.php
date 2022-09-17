@@ -1,15 +1,12 @@
 <?php
 
-use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\OrderUserController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PasswordController;
-use App\Http\Controllers\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +32,10 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::group(['prefix' => 'home', 'as' => 'home.'], function () {
     Route::get('shop/{id}', [HomeController::class, 'shop'])->name('shop');
+});
+
+Route::group(['prefix' => 'comment', 'as' => 'comment.'], function () {
+    Route::post('add-comment', [CommentController::class, 'store'])->name('add-comment')->middleware(['auth']);
 });
 
 Route::group(['prefix' => 'product', 'as' => 'product.'], function () {

@@ -107,7 +107,7 @@ class CartController extends Controller
         // create data to save into table orders
         $dataOrder = [
             'user_id'   => Auth()->id(),
-            'status'    => Order::STATUS[1],
+            'status'    => Order::STATUS[0],
         ];
         DB::beginTransaction();
         try {
@@ -134,7 +134,6 @@ class CartController extends Controller
                     OrderDetail::create($orderDetail);
                     $product = Product::whereId($productId)->first();
                     //    --------------------------------
-                    $product = Product::whereId($productId)->first();
                     $product->update(['quantity' => $product->quantity - $quantity]);
                     // khi order thanh công sẽ trừ số lượng  product
                 }
@@ -145,6 +144,7 @@ class CartController extends Controller
 
             return redirect()->route('order_user.list_order')->with('success', 'Your Order was successful!');
         } catch (Exception $exception) {
+            dd($exception);
             DB::rollBack();
             return redirect()->back()->with('error', $exception->getMessage());
         }

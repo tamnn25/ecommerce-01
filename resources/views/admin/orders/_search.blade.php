@@ -1,6 +1,6 @@
 @php
-    $status = request()->get('status');
-    $status = !empty($status) && is_array($status) ? $status : [];
+$status = request()->get('status');
+$status = !empty($status) && is_array($status) ? $status : [];
 @endphp
 
 <div class="mb-5 border p-3 bg-white section-search">
@@ -13,16 +13,16 @@
                     <input type="text" class="form-control" name="full_name" value="{{ request()->get('full_name') }}">
                 </div>
 
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="">{{ __('message.money') }}</label>
                     <div class="d-flex align-items-center">
                         <input type="text" name="from_money" class="form-control" value="{{ request()->get('from_money') }}">
                         <i class="ml-2">-</i>
                         <input type="text" name="to_money" class="form-control ml-2" value="{{ request()->get('to_money') }}">
                     </div>
-                </div>
+                </div> -->
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="mb-3">
                     <label for="">{{ __('message.quantity') }}</label>
                     <div class="d-flex align-items-center">
@@ -40,7 +40,7 @@
                         <input type="text" name="to_order_date" class="form-control ml-2 datepicker datepicker-to-order-date" value="{{ request()->get('to_order_date') }}">
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-md-3">
                 <div class="mb-3">
                     <label class="form-label">{{ __('message.status') }}</label><br>
@@ -69,10 +69,10 @@
                 </div>
             </div>
             <div class="col-md-3">
-                
+
             </div>
         </div>
-    
+
         <p>
             <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ route('admin.order.index') }}'"><i class="fas fa-sync-alt"></i> {{ __('message.reset') }}</button>
             <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> {{ __('message.search') }}</button>
