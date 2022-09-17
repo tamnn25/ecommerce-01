@@ -91,17 +91,7 @@
                 <nav class="header__menu">
                     <ul>
                         <li class="active"><a href="{{ route('index')  }}">Trang chủ</a></li>
-                        <li><a href="{{ route('home.shop', 0) }}">Sản phẩm</a>
-                            <ul class="header__menu__dropdown">
-                            @foreach ($categories as $category)
-                                <ul>
-                                    <li class="active" data-filter="*">
-                                        <a href="{{ url('home/shop/'. $category->id)}}"><span>{{ $category->name }}</span></a>
-                                    </li>
-                                </ul>
-                            @endforeach
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('home.shop', 0) }}">Sản phẩm</a></li>
                         <li><a href="">Kiến thức</a>
                             <ul class="header__menu__dropdown">
                                 <li><a href="#">Kỹ năng sống</a></li>
