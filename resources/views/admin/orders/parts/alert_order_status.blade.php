@@ -1,11 +1,11 @@
-@if ($order->status == \App\Models\Order::STATUS[1])
-    <div class="btn btn-outline-primary" role="alert">chưa thanh toán</div>
+@if (empty($order->status) || $order->status == \App\Models\Order::STATUS[0])
+    <div class="text-primary">{{ __('message.status_payment_unpaid') }}</div>
+@elseif ($order->status == \App\Models\Order::STATUS[1])
+    <div class="text-secondary">{{ __('message.status_payment_online') }}</div>
 @elseif ($order->status == \App\Models\Order::STATUS[2])
-    <div class="btn btn-outline-secondary" role="alert">đã thanh toán online</div>
+    <div class="text-info">{{ __('message.status_shipper_doing') }}</div>
 @elseif ($order->status == \App\Models\Order::STATUS[3])
-    <div class="btn btn-outline-warning" role="alert">shipper đang đi giao hàng</div>
-@elseif ($order->status == \App\Models\Order::STATUS[4])
-    <div class="btn btn-outline-danger" role="alert">cancel đơn hàng</div>
+    <div class="text-danger">{{ __('message.status_cancel') }}</div>
 @else
-    <div class="btn btn-outline-success" role="alert">hoàn thành</div>
+    <div class="text-success">{{ __('message.status_complete') }}</div>
 @endif

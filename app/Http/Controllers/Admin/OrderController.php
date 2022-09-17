@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
     private const RECORD_LIMIT = 10;
+
+    /**
+     * Define Variable
+     */
+    private $order;
+
+    /**
+     * Constructor
+     */
+    public function __construct(Order $order)
+    {
+        $this->order = $order;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,9 +33,6 @@ class OrderController extends Controller
      */
     public function index(request $request)
     {
-        //
-        // $status = $request-> $status;
-        // $data = [];
         $orders = Product::all();
         $orders = Order::with('orderDetail')
             ->with('user')
@@ -30,11 +40,10 @@ class OrderController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(8);
 
-        if (!empty($request->name)) {
-            $orders = Order::where('user_id', 'like', '%' . $request->name . '%')
+        if (!empty($request->full_name)) {
+            $orders = Order::where('user_id', 'like', '%' . $request->full_name . '%')
                 ->orderBy('id', 'desc')
                 ->paginate(8);
-            //dd($orders);
         }
         if (!empty($request->date)) {
             $orders = Order::where('created_at', 'like', '%' . $request->date . '%')
@@ -42,14 +51,13 @@ class OrderController extends Controller
                 ->paginate(8);
         }
         if (!empty($request->status)) {
-            $orders = Order::where('status', 'like', '%' . $request->status . '%')
+            $orders = Order::whereIn('status', $request->status)
                 ->orderBy('id', 'desc')
                 ->paginate(8);
         }
 
 
         $data['orders'] = $orders;
-        // dd($orders);
         return view('admin.orders.index', $data);
     }
     public function show($id)
@@ -131,5 +139,58 @@ class OrderController extends Controller
 
             echo $ex->getMessage();
         }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateStatus($id, Request $request)
+    {
+        // Get Order Info
+        $order = $this->order->findOrFail($id);
+
+        try {
+            // Set value for field STATUS
+            $order->status = $request->status;
+
+            // Save data
+            $order->save();
+
+            return response()->json([
+                'message' => trans('message.update_order_status_success'),
+                'status_name' => $order->status_name,
+            ], 200);
+        } catch (Exception $ex) {
+            return response()->json([
+                'error_message' => $ex->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function reportOrder(Request $request)
+    {
+        $order = Order::where('status', 4)->with('orderDetail')->get();
+        $sum = 0;
+
+        if (!empty($request->start_date) && !empty($request->end_date)) {
+            $order = Order::whereDate('created_at', '>=', $request->start_date)
+                ->whereDate('created_at', '<=', $request->end_date)
+                ->where('status', 4)->with('orderDetail')->get();
+            $sum = 0;
+        }
+        foreach ($order as $key => $value) {
+            $arrDetail = $value->orderDetail->toArray();
+            $sumTotal = array_sum(array_column($arrDetail, 'total'));
+
+            $sum += $sumTotal;
+        }
+
+        $data['total'] = $sum;
+        $data['order'] = $order;
+
+        return view('admin.report.reportOrder', $data);
     }
 }

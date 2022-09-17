@@ -18,11 +18,14 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Method: GET
-        $data = [];
         $categories = Category::get();
+
+        if (!empty($request->name)) {
+            $categories = Category::where('name',  'like', '%' . $request->name . '%')->get();
+        }
+        // Method: GET
         $data['categories'] = $categories;
         return view('admin.categories.index', $data);
     }

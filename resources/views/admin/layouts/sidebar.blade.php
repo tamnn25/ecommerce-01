@@ -1,102 +1,213 @@
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<aside class="left-sidebar" data-sidebarbg="skin5">
-  <!-- Sidebar scroll-->
-  <div class="scroll-sidebar">
-    <hr>
-    {{-- @foreach ($admins as $admin) --}}
-    <nav class="sidebar-nav" class="p-t-30">
-      <ul id="sidebarnav" class="p-t-30">
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        @if(auth('admin')->user()->avatar)
+        <img src="{{ asset(auth('admin')->user()->avatar) }}" class="img-circle elevation-2" alt="User Image">
+        @else
+        <img src="{{ asset('backend/no-avatar.png') }}" class="img-circle elevation-2" alt="User Image">
+        @endif
+      </div>
+      <div class="info">
+        <a href="{{ route('admin.dashboard') }}" class="d-block">{{ auth('admin')->user()->name }}</a>
+      </div>
+    </div>
 
-        @if(auth()->guard('admin')->user()->role_id == 2)
-        {{-- category --}}
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        {{-- menu for home page --}}
+        <li class="nav-item {{ Route::currentRouteName() == 'admin.dashboard' ? 'menu-open' : '' }}">
+          <a href="{{ route('admin.dashboard') }}" class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              {{ __('message.dashboard') }}
+            </p>
+          </a>
 
-        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">category</span></a>
-          <ul aria-expanded="false" class="collapse  first-level">
-            <li class="sidebar-item"><a href="{{ route('admin.category.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Category</span></a></li>
-            <li class="sidebar-item"><a href="{{ route('admin.category.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create Category</span></a></li>
+        </li>
+
+        {{-- menu of category module --}}
+        @php
+        $routeCategoryArr = [
+        'admin.category.index',
+        'admin.category.create',
+        'admin.category.edit',
+        'admin.category.show',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeCategoryArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              {{ __('message.category_management') }}
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.category.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.category.index' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{ __('message.category_list') }}</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.category.create') }}" class="nav-link {{ Route::currentRouteName() == 'admin.category.create' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{ __('message.create_category') }}</p>
+              </a>
+            </li>
           </ul>
         </li>
-        {{-- end category --}}
-        {{-- product --}}
 
-        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-barcode"></i><span class="hide-menu">Product</span></a>
-          <ul aria-expanded="false" class="collapse  first-level">
-            <li class="sidebar-item"><a href="{{ route('admin.product.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Products</span></a></li>
-            <li class="sidebar-item"><a href="{{ route('admin.product.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create Products</span></a></li>
+        {{-- menu of product module --}}
+        @php
+        $routeProductArr = [
+        'admin.product.index',
+        'admin.product.create',
+        'admin.product.edit',
+        'admin.product.show',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeProductArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fab fa-product-hunt"></i>
+            <p>
+              {{ __('message.product_management') }}
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.product.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.product.index' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{ __('message.product_list') }}</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.product.create') }}" class="nav-link {{ Route::currentRouteName() == 'admin.product.create' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{ __('message.create_product') }}</p>
+              </a>
+            </li>
           </ul>
         </li>
-        {{-- end product --}}
+
+        {{-- menu of order module --}}
+        @php
+        $routeOrderArr = [
+        'admin.order.index',
+        'admin.order.edit',
+        'admin.order.show',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeOrderArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-file-invoice-dollar"></i>
+            <p>
+              {{ __('message.order_management') }}
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.order.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.order.index' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{ __('message.order_list') }}</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        {{-- menu of customer module --}}
+        @php
+        $routeCustomerArr = [
+        'admin.customer.index',
+        'admin.customer.edit',
+        'admin.customer.show',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeCustomerArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              {{ __('message.customer_management') }}
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.customer.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.customer.index' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{ __('message.customer_list') }}</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        {{-- menu of comment module --}}
+        @php
+        $routeCommentArr = [
+        'admin.user.index',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeCommentArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-user-secret"></i>
+            <p>
+              Quản lý đánh giá
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.comment.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.comment.index' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách đánh giá</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        {{-- menu of report module --}}
+        @php
+        $routeReportArr = [
+        'admin.report.order',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeReportArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-user-secret"></i>
+            <p>
+              Báo cáo bán hàng
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.report.order') }}" class="nav-link {{ Route::currentRouteName() == 'admin.report.order' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách báo cáo bán hàng</p>
+              </a>
+            </li>
+          </ul>
+        </li>
 
       </ul>
-      </li>
-      @elseif (auth()->guard('admin')->user()->role_id == 3)
-      {{-- order  --}}
-
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-inbox"></i><span class="hide-menu">Order</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.order.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Order</span></a></li>
-        </ul>
-      </li>
-      {{-- end order  --}}
-      @elseif (auth()->guard('admin')->user()->role_id == 1)
-      {{-- category --}}
-
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">category</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.category.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Category</span></a></li>
-          <li class="sidebar-item"><a href="{{ route('admin.category.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create Category</span></a></li>
-        </ul>
-      </li>
-      {{-- end category --}}
-      {{-- product --}}
-
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-barcode"></i><span class="hide-menu">Product</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.product.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Products</span></a></li>
-          <li class="sidebar-item"><a href="{{ route('admin.product.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create Products</span></a></li>
-        </ul>
-      </li>
-      {{-- end product --}}
-
-      {{-- promotion --}}
-
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-users"></i><span class="hide-menu">Customer manage</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.customer.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Customer</span></a></li>
-          {{-- <li class="sidebar-item"><a href="{{ route('admin.user.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create User</span></a>
-      </li> --}}
-      </ul>
-      </li>
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-address-card"></i><span class="hide-menu">User manage</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.user.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List User</span></a></li>
-          <li class="sidebar-item"><a href="{{ route('admin.user.create') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Create User</span></a></li>
-        </ul>
-      </li>
-      {{-- order  --}}
-
-      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-inbox"></i><span class="hide-menu">Order</span></a>
-        <ul aria-expanded="false" class="collapse  first-level">
-          <li class="sidebar-item"><a href="{{ route('admin.order.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">List Order</span></a></li>
-        </ul>
-      </li>
-      {{-- end order  --}}
-
-      </ul>
-      </li>
-
-      @endif
-
-      <form action="{{ route('admin.logout') }}" method="POST">
-        @csrf
-        <button class="btn btn-dark" type="submit" onclick="return confirm('Are you sure LOGOUT ?')">Logout</button>
-      </form>
     </nav>
-    {{-- @endforeach --}}
+    <!-- /.sidebar-menu -->
   </div>
-  <!-- End Sidebar scroll-->
+  <!-- /.sidebar -->
+
+  <div class="p-2">
+    <form action="{{ route('admin.logout') }}" method="POST">
+      @csrf
+      <button type="submit" onclick="return confirm('{{ __("message.confirm_logout") }}')"><i class="fas fa-sign-out-alt"></i> <span class="ml-2">{{ __('message.logout') }}</span></button>
+    </form>
+  </div>
 </aside>
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->

@@ -1,13 +1,18 @@
+@php
+    // Get Param Request
+    $paramRequest = request()->except('page');
+@endphp
+
 @extends('admin.layouts.master')
 
 {{-- set page title --}}
-@section('title', 'List Order')
+@section('title', __('message.order_list'))
 
 {{-- set breadcrumbName --}}
-@section('breadcrumbName', 'Order Management')
+@section('breadcrumbName', __('message.order_management'))
 
 {{-- set breadcrumbMenu --}}
-@section('breadcrumbMenu', 'List Order')
+@section('breadcrumbMenu', __('message.order_list'))
 
 {{-- import file css (private) --}}
 @push('css')
@@ -17,28 +22,21 @@
 {{-- import file js (private) --}}
 @push('js')
     <script src="/backend/js/orders/order-list.js"></script>
+    
+    <!-- import script process for Ajax -->
+    @include('admin.orders.parts.ajax_update_order_status')
 @endpush
 
 @section('content')
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">List Order</li>
-        
-    </ol>
-</nav>
     {{-- form search --}}
-    {{-- @include('admin.orders._search') --}}
+    @include('admin.orders._search')
 
     {{-- show message --}}
     @include('errors.error')
-    
-    @include('admin.orders._search')
+
     {{-- display list order table --}}
     @include('admin.orders._table')
 
     {{-- modal update order status  --}}
-
-    {{-- @include('admin.orders.parts.modal_update_order_status') --}}
-
-
+    @include('admin.orders.parts.modal_update_order_status')
 @endsection

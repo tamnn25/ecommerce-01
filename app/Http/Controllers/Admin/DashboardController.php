@@ -24,13 +24,15 @@ class DashboardController extends Controller
         $CountOrder = Order::count();
         $CountUser = User::count();
         $CountAdmin = Admin::count();
+        $countCustomer = User::count();
 
         return view('admin.dashboard')->with([
-            'CountCategory' => $CountCategory,
-            'CountProduct' => $CountProduct,
-            'CountOrder' => $CountOrder,
-            'CountUser' => $CountUser,
-            'CountAdmin' => $CountAdmin,
+            'countCategory' => $CountCategory,
+            'countProduct' => $CountProduct,
+            'countOrder' => $CountOrder,
+            'countUser' => $CountUser,
+            'countAdmin' => $CountAdmin,
+            'countCustomer' => $countCustomer
         ]);
     }
 }
