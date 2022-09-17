@@ -97,6 +97,10 @@ Route::group(['middleware' => ['check_login_admin'], 'as' => 'admin.'], function
             Route::delete('/delete/{id}', [CommentController::class, 'destroy'])->name('destroy');
         });
 
+        Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
+            Route::get('/orders', [OrderController::class, 'reportOrder'])->name('order');
+        });
+
         // excel Admin
         Route::get('/importExportView', [MyController::class, 'importExportView'])->name('importExportView');
         Route::get('/export', [MyController::class, 'export'])->name('export');

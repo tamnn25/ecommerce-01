@@ -64,24 +64,32 @@
             <div class="col-6">
                 <div class="comment">
                     <p v-for="items in item" v-text="items"></p>
-                </div><!--End Comment-->
-            </div><!--End col -->
-        </div><!-- End row -->
-        <div class="row">
-            <div class="">
-                <textarea type="text" class="form-control" placeholder="Viết đánh giá ... " v-model="newItem" @keyup.enter="addItem()"></textarea>
-                
-                <div class="rating">
-                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                 </div>
-                <button v-on:click="addItem()" class="btn btn-warning mt-2" type="submit">Đánh giá</button>
-            </div><!-- End col -->
-        </div><!--End Row -->
-    </div><!--End Container -->
+                <!--End Comment-->
+            </div>
+            <!--End col -->
+        </div><!-- End row -->
+        <form action="{{ route('comment.add-comment') }}" method="POST">
+            @csrf
+            <div class="row">
+                <div class="">
+                    <textarea type="text" name="content" class="form-control" placeholder="Viết đánh giá ... " v-model="newItem" @keyup.enter="addItem()"></textarea>
+                    <input type="hidden" name="product_id" value="{{$product->id}}">
+
+                    <div class="rating">
+                        <input type="radio" name="rate" value="5" id="5"><label for="5">☆</label>
+                        <input type="radio" name="rate" value="4" id="4"><label for="4">☆</label>
+                        <input type="radio" name="rate" value="3" id="3"><label for="3">☆</label>
+                        <input type="radio" name="rate" value="2" id="2"><label for="2">☆</label>
+                        <input type="radio" name="rate" value="1" id="1"><label for="1">☆</label>
+                    </div>
+                    <button v-on:click="addItem()" class="btn btn-warning mt-2" type="submit">Đánh giá</button>
+                </div><!-- End col -->
+            </div>
+            <!--End Row -->
+        </form>
+    </div>
+    <!--End Container -->
 </section><!-- end App -->
 <section class="categories">
     <div class="container">
@@ -158,7 +166,7 @@
     .checked {
         color: orange;
     }
-    
+
     .rating {
         display: flex;
         flex-direction: row-reverse;

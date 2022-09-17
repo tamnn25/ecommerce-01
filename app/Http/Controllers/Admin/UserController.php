@@ -20,7 +20,7 @@ class UserController extends Controller
     public function index(request $request)
     {
         $data = [];
-        $admins = Admin::orderBy('id', 'desc')->paginate(4);
+        $admins = Admin::orderBy('id', 'desc')->paginate(9);
 
         if (!empty($request->name)) {
             $admins = Admin::where('name', 'like', '%' . $request->name . '%')
@@ -32,6 +32,13 @@ class UserController extends Controller
                 ->orderBy('id', 'desc')
                 ->paginate(4);
         }
+
+        if (!empty($request->email)) {
+            $admins = Admin::where('email', 'like', '%' . $request->email . '%')
+                ->orderBy('id', 'desc')
+                ->paginate(4);
+        }
+
         $data['users'] = $admins;
 
         return view('admin.users.index', $data);
