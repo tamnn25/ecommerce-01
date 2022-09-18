@@ -23,7 +23,7 @@
 @section('content')
 
 <hr><br> <br>
-<h4>Order details</h4>
+<h4>Chi tiết đơn hàng</h4>
 <br>
 {{-- show message --}}
 @include('errors.error')
@@ -34,11 +34,11 @@
     <thead>
         <tr>
             <th>STT</th>
-            <th>image</th>
-            <th>name</th>
-            <th>quantity</th>
-            <th>price</th>
-            <th>Total</th>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Tổng tiền</th>
         </tr>
     </thead>
     <tbody>
@@ -48,12 +48,12 @@
             <td><img src="/{{$order->product->thumbnail}}" width="150px" alt=""></td>
             <td>{{$order->product->name}}</td>
             <td>{{$order->quantity}}</td>
-            <td>{{$order->price_id}} $</td>
-            <td>{{$order->total}} $</td>
+            <td>{{$order->price}} VNĐ</td>
+            <td>{{$order->total}} VNĐ</td>
         </tr>
         @endforeach
 
     </tbody>
 </table>
-<button class="btn btn-info"><a href="{{route('order_user.list_order')}}">BACK</a></button>
+<button class="btn btn-danger"><h5><a href="{{route('order_user.list_order')}}">Trở về</a></h5></button>
 @endsection

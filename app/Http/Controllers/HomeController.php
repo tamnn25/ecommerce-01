@@ -23,6 +23,12 @@ class HomeController extends Controller
         ]);
     }
 
+    public function categories($id) {
+        $category = Category::with('product')->find($id); 
+
+        return view('home.homepage')->with('products', $categories);
+    }
+
     public function shop(Request $request, $id)
     {
         $money = !empty($request->money) ? $request->money : '';

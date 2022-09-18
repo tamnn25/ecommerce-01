@@ -13,55 +13,11 @@
 
 <body>
 
-    <h1>Xin chào!</h1>
+    <h1>THE AN STATIONERY xin chào!</h1>
 
     <p>Đây là mã xác nhận đơn hàng: {{ $orderInfo['code'] }}</p>
 
-    <!-- <table class="table table-bordered table-hover" id="tbl-list-product">
-            <thead class="thead-dark">
-                <tr>
-                    <th colspan="3">Product Name</th>
-                    <th colspan="3">product</th>
-                    <th colspan="3">Quantity</th>
-                    <th colspan="3" >Price</th>
-                    <th colspan="3">Money</th>
-                </tr>
-            </thead>
-            @foreach ($carts as $key => $cart)
-            <tbody>
-                <tr>
-                    <td class="shoping__cart__item" colspan="3">
-                      <img src="{{asset( $cart['image']) }}" style="width:120px" alt=" {{  $cart['name'] }}">
-        
-                    </td>
-                    <td class="shoping__cart__name" colspan="3">
-                        <h5> {{ $cart['name'] }}</h5>
-                    </td>
-                    <td class="shoping__cart__quantity" colspan="3">
-                        <div class="quantity">
-                                {{ number_format($cart['quantity']) }}
-                            </div>
-                        </td>
-                        <td colspan="3">
-                            <div class="product-price">
-                                {{ number_format( $cart['price'])}} $
-                            </div>
-                        </td>
-                        <td colspan="3">
-                            <div class="cart-money">
-                                @php
-                                    $money = $cart['quantity'] * $cart['price'];
-                                    echo number_format($money) . ' $';
-                                @endphp
-                            </div>
-                        </td>
-                
-                    </tr>
-                </tbody>
-            @endforeach
-        </table> -->
-
-    <p>Cảm ơn!!</p>
+    <p>Cảm ơn!</p>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

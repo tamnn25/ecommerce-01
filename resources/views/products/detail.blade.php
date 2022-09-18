@@ -3,18 +3,13 @@
 @section('title', $product->name)
 
 @section('content')
-<hr>
 <section class="product-detail">
     <div class="row">
 
         <div class="col-lg-6 col-md-6">
             <div class="product__details__pic__item">
-                <img class="product__details__pic__item--large" src="{{ asset($product->thumbnail) }}" width=" 350px" height="400px" alt="{{ $product->image }}">
+                <img class="product__details__pic__item--large" src="{{ asset($product->thumbnail) }}" height="400px" alt="{{ $product->image }}">
             </div>
-            <hr>
-            <div class="product__details__pic__slider owl-carousel">
-            </div>
-            <hr>
         </div>
         <div class="col-lg-6 col-md-6">
             <div class="product__details__text">
@@ -26,20 +21,20 @@
                         <span>{{ $product->description }}</span>
                     </p>
                     <p class="product-comment">
-                        <span>Số lượng còn lại: </span>
+                        <b>Loại sản phẩm: </b>
+                        <span>{{ $product->Category->name }}</span>
+                    </p>
+                    <p class="product-comment">
+                        <b>Số lượng còn lại: </b>
                         @if ($product->quantity <= 0) <span class="text-danger">Hết hàng</span>
                             @else
                             <span>{{ $product->quantity }}</span>
                             @endif
                     </p>
-                    <hr>
-                    @if (!empty($product->discount))
-                    <p class="product-price text-muted"><del>{{ number_format($product->price) . '  VNĐ' }}</del></p>
-                    <p class="product-price">{{ number_format($product->discount) . 'VNĐ' }}</p>
-                    @else
-                    <p class="product-price">{{ number_format($product->price) . '   VNĐ' }}</p>
-                    @endif
-                    <hr>
+                    <p class="product-price">
+                        <b>Số lượng còn lại: </b>    
+                        <span>{{ number_format($product->price) . '   VNĐ' }}</span>
+                    </p>
                     <p>
                     <div class="product__details__quantity">
                         <div class="quantity">

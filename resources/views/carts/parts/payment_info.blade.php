@@ -1,30 +1,17 @@
-<h4 class="btn btn-info">Thông tin thanh toán</h4>
-{{-- Thông Tin Thanh Toán --}}
-    <br>
+
 <div class="border p-2">
+    <div class="mb-3"><h4><b>Thông tin thanh toán</h4></b></div>
+    {{-- Thông Tin Thanh Toán --}}
     <form action="{{ route('cart.checkout-complete') }}" method="POST" id="frm-checkout" >
         @csrf
-        <div class="form-group btn btn-group btn-info" style="    background-color: #5d9564eb;">
-            <input type="radio" value="1" name="payment_type" id="payment-type-1" checked class="payment-type">
-            <label for="payment-type-1">Thanh toán tại nhà</label>
-            <br>
-            <input type="radio" value="2" name="payment_type" id="payment-type-2" class="payment-type">
-            <label for="payment-type-2">Thanh toán bằng Credit Card</label>
-        </div>
-        <div class="form-group" id="payment-info">
-            <div class="border p-2">
-                <div class="form-group mb-2">
-                    <label for="">Số thẻ tín dụng</label>
-                    <input type="number" value="" name="cc_number" class="form-control" placeholder="" autocomplete="off">
-                </div>
-                <div class="form-group mb-2">
-                    <label for="">Ngày hết hạn</label>
-                    <input type="text" value="" name="cc_expire_date" class="form-control" placeholder="" autocomplete="off">
-                </div>
-                <div class="form-group mb-2">
-                    <label for="">Chữ ký / Mã CVV2</label>
-                    <input type="number" value="" name="cc_cvv" class="form-control" placeholder="" autocomplete="off">
-                </div>
+        <div class="form-group btn btn-group btn-info" style="background-color:#FDE5C8">
+            <div class="mr-4">
+                <input type="radio" value="1" name="payment_type" id="payment-type-1" checked class="payment-type">
+                <label for="payment-type-1"  style="color:black">Thanh toán tại nhà</label>
+            </div>
+            <div class="ml-2">
+                <input type="radio" value="2" name="payment_type" id="payment-type-2" class="payment-type">
+                <label for="payment-type-2"  style="color:black">Thanh toán bằng Credit Card</label>
             </div>
         </div>
         <div class="mt-2">

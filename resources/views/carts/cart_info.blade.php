@@ -4,10 +4,10 @@
 @section('title', 'Cart Page')
 @section('content')
 <section class="list-product">
-
+<h3> Giỏ hàng của bạn </h3></br>
     @if(!empty($carts))
     <table class="table table-bordered table-hover" id="tbl-list-product">
-        <thead class="thead-dark">
+        <thead class="" style="background-color: #FDE5C8;">
             <tr>
                 <th>Hình ảnh sản phẩm</th>
                 <th>Tên sản phẩm</th>
@@ -62,13 +62,13 @@
     </div>
     <div class="mt-2" style="float:right; margin-left:10px;">
         {{-- tiến hành thanh toán --}}
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-send-code">Tiến hành thanh toán</button>
+        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modal-send-code">Thanh toán ngay</button>
         <!-- <a class="btn btn-outline-success" href="{{ route('cart.checkout') }}">Tiến hành thanh toán</a> -->
     </div>
 
     <div class="float-right mt-2" style="float:left;">
         <div class="shoping__cart__btns">
-            <a class="btn btn-outline-warning" href="{{ route('index') }}">Tiếp tục mua sắm</a>
+            <a class="btn btn-outline-danger" href="{{ route('index') }}">Tiếp tục mua hàng</a>
         </div>
     </div>
     <div class="float-right mt-2" style="float:left;">

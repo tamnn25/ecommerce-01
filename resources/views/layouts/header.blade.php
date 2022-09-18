@@ -15,9 +15,7 @@
                     <div class="header__top__right">
                         <div class="header__top__right__social">
                             <a href="https://www.facebook.com/">Facebook</a>
-                            <a href="https://twitter.com/">Twitter</a>
-                            {{-- <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-p"></i></a> --}}
+                            <a href="https://twitter.com/">Instagram</a>
                         </div>
                         <div class="header__top__right__language">
                             <img src="https://flagcdn.com/h20/vn.png" srcset="https://flagcdn.com/h40/vn.png 2x,
@@ -34,7 +32,7 @@
                                     <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span class="fa fa-user"></span><span class="text"> </span><span>{{ Auth::user()->name }}</span>
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #ceecdf;">
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color:#F5DAC1;">
 
                                         <li>
                                             {{-- <a class="dropdown-item" href="{{route('password.password')}}">Cập nhật hồ sơ</a>
@@ -44,7 +42,7 @@
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="{{route('order_user.list_order')}}">Lịch sử thanh toán</a></li>
+                                        <li><a class="dropdown-item" href="{{route('order_user.list_order')}}">Lịch sử mua sắm</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
@@ -57,7 +55,7 @@
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
 
-                                                <button style="width: 95%;" type="submit" class="btn btn-info"><i class="fas fa-sign-out-alt"></i><span class="text">&nbsp;Đăng xuất</span></button>
+                                                <button style="width: 75%; margin-left: 20px" type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i><span class="text">&nbsp;Đăng xuất</span></button>
 
                                             </form>
                                         </li>
@@ -89,19 +87,7 @@
                 <nav class="header__menu">
                     <ul>
                         <li class="active"><a href="{{ route('index')  }}">Trang chủ</a></li>
-                        <li><a href="{{ route('home.shop', 0) }}">Sản phẩm</a>
-                            <ul class="header__menu__dropdown">
-                                @if(!empty($categories))
-                                @foreach ($categories as $category)
-                                <ul>
-                                    <li class="active" data-filter="*">
-                                        <a href="{{ url('home/shop/'. $category->id)}}"><span>{{ $category->name }}</span></a>
-                                    </li>
-                                </ul>
-                                @endforeach
-                                @endif
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('home.shop', 0) }}">Sản phẩm</a></li>
                         <li><a href="">Kiến thức</a>
                             <ul class="header__menu__dropdown">
                                 <li><a href="#">Kỹ năng sống</a></li>

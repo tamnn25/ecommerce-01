@@ -2,7 +2,7 @@
 $cartNumber = 0;
 if (Session::has('carts')) {
     foreach (Session::get('carts') as $key => $value) {
-        $cartNumber += intval($value['quantity']);
+        $cartNumber += 1;
     }
 }
 @endphp

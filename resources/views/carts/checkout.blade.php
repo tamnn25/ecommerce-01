@@ -14,7 +14,10 @@
             <div class="col-4">
                 {{-- thong tin ca nhan --}}
                 @include('carts.parts.personal_info')
-                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 ">
                 {{-- thong tin thanh toan --}}
                 @include('carts.parts.payment_info')
             </div>

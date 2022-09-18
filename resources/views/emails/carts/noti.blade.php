@@ -13,8 +13,8 @@
 
 <body>
 
-    <h1>Xin chào!</h1>
-    <p>Cảm ơn bạn đã tin tưởng và lựa chọn mua sắm tại cửa hàng của chúng tôi.</p>
+    <h1>THE AN STATIONERY xin chào!</h1>
+    <p>Cảm ơn bạn đã tin tưởng và lựa chọn mua sắm tại cửa hàng của chúng tôi. Hy vọng bạn sẽ hài lòng về những sản phẩm này.</p>
 
     <table class="table table-bordered table-hover" id="tbl-list-product">
         <thead class="thead-dark">
