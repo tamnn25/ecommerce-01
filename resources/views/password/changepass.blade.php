@@ -20,40 +20,49 @@
 @endpush
 
 @section('content')
-<div class="container rounded bg-white mt-5 mb-5">
+<div class="">
     <div class="row">
         @if (!empty($users))
         @foreach ($users as $item )
 
-        <div class="col-md-5 border-right">
+        <div class="col-lg-12">
             <form action="{{route('password.store', $item->id)}}" method="post">
                 @csrf
                 @method('PUT')
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Update your profile</h4>
-                    </div>
-                    <hr>
-                    <div class="row mt-2">
-                        <div class="col-md-12"><label class="labels">Name</label><input type="text" name="name" class="form-control" placeholder="first name" value="{{ $item->name }}"></div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Password</label><input type="password" name="password" class="form-control" placeholder="education" value="{{ $item->password }}"></div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="headline" value="{{ $item->email }}"></div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Address</label><input type="text" name="address" class="form-control" value="{{ $item->address }}" placeholder="state"></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">phone_number</label><input type="text" name="phone_number" class="form-control" value="{{ $item->phone_number }}" placeholder="state"></div>
-                    </div>
+                <div class="row mb-3">
+                    <h4>Cập nhật Profile</h4>
                 </div>
-                <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mt-3">
+                            <label>Tên đăng nhập: </label>
+                            <input type="text" class="form-control" placeholder="Tên đăng nhập" value="{{ $item->name }}">
+                        </div>
+                        <div class="mt-3">
+                            <label>Mật khẩu: </label>
+                            <input type="password" name="password" class="form-control" placeholder="Mật khẩu..." value="{{ $item->password }}">
+                        </div>
+                        <div class="mt-3">
+                            <label>Email: </label>
+                            <input type="text" name="email" class="form-control"
+                                placeholder="Email..." value="{{ $item->email }}">
+                        </div>
+
+                        <div class="mt-3">
+                            <label>Địa chỉ: </label>
+                            <input type="text" name="address" class="form-control" value="{{ $item->address }}" placeholder="Địa chỉ...">
+                        </div>
+                        <div class="mt-3">
+                            <label>Số điện thoại: </label>
+                            <input type="text" name="phone_number" class="form-control" value="{{ $item->phone_number }}" placeholder="Số điện thoại...">
+                        </div>
+                        <button class="btn btn-danger mt-4" type="submit">Lưu thông tin</button>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <img class="ml-4 mt-3" src="https://toigingiuvedep.vn/wp-content/uploads/2021/05/hinh-anh-avatar-de-thuong.jpg" alt="" height="400px">
+                    </div>  
+                </div>    
             </form>
         </div>
         @endforeach

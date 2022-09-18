@@ -21,11 +21,10 @@ class categorySeeder extends Seeder
             ['name' => 'Văn học', 'created_at' => $date, 'updated_at' => $date],
             ['name' => 'Kinh tế', 'created_at' => $date, 'updated_at' => $date],
             ['name' => 'Tâm lý - Kỹ năng sống', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Nuôi dạy con', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Sách thiếu nhi', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Tiểu sử - Hồi ký', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Sách ngoại ngữ', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Sách mới', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Balo-Túi cặp', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoạ phẩm', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Dụng cụ học tập', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Đồ chơi', 'created_at' => $date, 'updated_at' => $date],
         ];
 
         DB::table('categories')->insert($data);

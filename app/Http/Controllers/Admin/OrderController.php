@@ -169,4 +169,28 @@ class OrderController extends Controller
             ], 500);
         }
     }
+
+    public function reportOrder(Request $request)
+    {
+        $order = Order::where('status', 4)->with('orderDetail')->get();
+        $sum = 0;
+
+        if (!empty($request->start_date) && !empty($request->end_date)) {
+            $order = Order::whereDate('created_at', '>=', $request->start_date)
+                ->whereDate('created_at', '<=', $request->end_date)
+                ->where('status', 4)->with('orderDetail')->get();
+            $sum = 0;
+        }
+        foreach ($order as $key => $value) {
+            $arrDetail = $value->orderDetail->toArray();
+            $sumTotal = array_sum(array_column($arrDetail, 'total'));
+
+            $sum += $sumTotal;
+        }
+
+        $data['total'] = $sum;
+        $data['order'] = $order;
+
+        return view('admin.report.reportOrder', $data);
+    }
 }

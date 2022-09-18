@@ -4,128 +4,17 @@
 
     <!-- SUB -->
     <div class="">
-        <img src="shop/img/banner/SUB1.PNG" style="margin-bottom: -50px; height: 90px">
+        <img src="shop/img/banner/SUB1.PNG" style="margin-bottom: -50px; height: 57px">
     </div>
     <!-- end sub -->
-
     <section class="featured spad">
-
         @include('home.listproduct')
-
     </section>
-    <!-- Featured Section End -->
-
-    <!-- Banner Begin -->
-    <div class="banner">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-lg-6 col-md-6 col-sm-6">
-
-                    <div class="banner__pic">
-
-                        <div class="banner__pic">
-                            <div id="m1" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ul class="carousel-indicators">
-
-                                    <li data-target="#m1" data-slide-to="0" class="active"></li>
-
-                                    <li data-target="#m1" data-slide-to="1"></li>
-
-                                    <li data-target="#m1" data-slide-to="2"></li>
-
-                                    <li data-target="#m1" data-slide-to="3"></li>
-                                </ul>
-                                <!-- The slideshow -->
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="{{ asset('shop/img/banner/1.jpg') }}" width="100%" height="275px" alt="Los Angeles">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{{ asset('shop/img/banner/2.jpg') }}" width="100%" height="275px" alt="Chicago">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{{ asset('shop/img/banner/3.jpg') }}" width="100%" height="275px" alt="New York">
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <img src="{{ asset('shop/img/banner/8.jpg') }}" width="100%" height="275px" alt="New York">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    {{-- slide chạy trái --}}
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner End -->
-
-    <!-- Blog Section Begin -->
-    <section class="from-blog spad">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title from-blog__title">
-                        <h2>Blog của chúng tôi</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="shop/img/blog/blog-1.jpg" height="250px" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">6 điều mà bạn cần chuẩn bị trước khi 30</a></h5>
-                            <p>Có người bảo đời người chỉ bắt đầu khi ta 30 tuổi. Nhưng để có một tuổi 30 trong mơ, 29 năm trước bạn cần phải chuẩn bị nhiều thứ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="shop/img/blog/blog-2.jpg" height="250px" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Tham quan trang trại sạch ở Mỹ</a></h5>
-                            <p>Nhà kho là nơi dùng để chứa các dụng cụ làm vườn và chăm bón cây, cứ vài tuần sẽ có người đến dọn dẹp sạch sẽ một lần</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="shop/img/blog/blog-3.jpg" height="250px" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Mẹo nấu ăn giúp việc nấu ăn trở nên đơn giản</a></h5>
-                            <p>1. Đối với trứng · 2. Nghiền khoai tây bằng sữa ấm · 3. Không để chảo quá tải · 4. Áp chảo thịt bằng chảo không dính</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <!-- Featured End -->
+    </section>
+    <!-- Blog Begin -->
+    <section>
+        @include('blog.blog')
     </section>
     <!-- Blog Section End -->
     @endsection

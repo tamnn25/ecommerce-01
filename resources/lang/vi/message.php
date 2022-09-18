@@ -129,6 +129,7 @@ return [
     'create_category' => 'Thêm mới danh mục',
     'confirm_logout' => 'Bạn có chắc muốn đăng xuất ?',
     'logout' => 'Đăng xuất',
+    'report_order' => 'Danh sách tổng tiền order thành công',
 
     // Search
     'keyword' => 'Từ khóa',

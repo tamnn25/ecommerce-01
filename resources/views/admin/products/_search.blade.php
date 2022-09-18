@@ -1,6 +1,6 @@
 @php
-    $categorySearch = request()->get('category_id') ? request()->get('category_id') : [];
-    $priceSearch = request()->get('price') ? request()->get('price') : [];
+$categorySearch = request()->get('category_id') ? request()->get('category_id') : [];
+$priceSearch = request()->get('price') ? request()->get('price') : [];
 @endphp
 
 <!-- SHARING -->
@@ -21,14 +21,14 @@
                     <select name="category_id[]" class="form-control category-select2" multiple>
                         <option value=""></option>
                         @if(!empty($categories))
-                            @foreach ($categories as $categoryId => $categoryName)
-                                <option value="{{ $categoryId }}" {{ in_array($categoryId, $categorySearch) ? 'selected' : ''  }}>{{ $categoryName }}</option>
-                            @endforeach
+                        @foreach ($categories as $categoryId => $categoryName)
+                        <option value="{{ $categoryId }}" {{ in_array($categoryId, $categorySearch) ? 'selected' : ''  }}>{{ $categoryName }}</option>
+                        @endforeach
                         @endif
                     </select>
                 </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <div class="section-filter">
                     <label>{{ __('message.price') }}</label>
                     <ul class="list-unstyled">
@@ -50,9 +50,9 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
-    
+
         <p>
             <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ route('admin.product.index') }}'"><i class="fas fa-sync-alt"></i> {{ __('message.reset') }}</button>
             <button type="submit" class="btn btn-primary" title="{{ __('message.search_product') }}"><i class="fas fa-search"></i> {{ __('message.search') }}</button>

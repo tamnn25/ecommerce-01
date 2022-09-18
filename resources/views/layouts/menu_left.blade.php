@@ -32,8 +32,7 @@
                     </div>
                     <div class="hero__search__phone">
                         <div class="hero__search__phone__icon">
-                            {{-- <i class="fa fa-phone"></i> --}}
-                            <img src="{{ asset('shop/img/call.png') }}" alt="">
+                           <i class="fa fa-phone" style="padding-top: 10px "></i>
                         </div>
                         <div class="hero__search__phone__text">
                             <h5>0909 567 893</h5>

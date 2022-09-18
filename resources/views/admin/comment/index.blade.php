@@ -5,15 +5,6 @@ $paramRequest = request()->except('page');
 
 @extends('admin.layouts.master')
 
-{{-- set page title --}}
-@section('title', __('message.user_list'))
-
-{{-- set breadcrumbName --}}
-@section('breadcrumbName', __('message.user_management'))
-
-{{-- set breadcrumbMenu --}}
-@section('breadcrumbMenu', __('message.user_list'))
-
 {{-- import file css (private) --}}
 @push('css')
 <link rel="stylesheet" href="/backend/css/users/user-list.css">
@@ -41,7 +32,7 @@ $paramRequest = request()->except('page');
 @endif
 
 {{-- form search --}}
-@include('admin.comment._search')
+<!-- @include('admin.comment._search') -->
 
 {{-- display list user table --}}
 @include('admin.comment._table')

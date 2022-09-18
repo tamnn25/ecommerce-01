@@ -57,11 +57,11 @@
     @if(!empty($users))
     @foreach($users as $user)
     <div class="card">
-        <img src="https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/6/6/photo-1-1622984031118226200693.jpg" alt="John" style="width:100%">
-        <h4>{{$user->name }}</h4>
+        <img src="https://toigingiuvedep.vn/wp-content/uploads/2021/05/hinh-anh-avatar-de-thuong.jpg" alt="John" style="width:100%">
+        <h3>{{$user->name }}</h3>
         <br>
         <h4>
-            <p class="title" style="  font-family: fantasy;">CEO & Founder, Apple.Com</p>
+            <p class="title" style="  font-family: fantasy;">Thành viên The An Stationery</p>
         </h4>
         <br>
         <h6><strong>Email : </strong> {{$user->email}}</h6>
@@ -69,12 +69,12 @@
         <h6><strong>Số điện thoại: </strong>{{$user->phone_number}}</h6>
 
         <div style="margin: 24px 0;">
-            <a href="#"><i class="fa fa-dribbble"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-facebook"></i></a>
+
         </div>
-        <a href="{{route('password.password')}}"><button>Cập nhật hồ sơ của bạn</button></a></p>
+        <a href="{{route('password.password')}}"><button style="background-color:#FDD1D0; color: black">CẬP NHẬT HỒ SƠ</button></a></p>
     </div>
     @endforeach
     @endif

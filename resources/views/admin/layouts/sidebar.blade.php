@@ -150,31 +150,54 @@
           </ul>
         </li>
 
-        <!-- {{-- menu of user module --}}
+        {{-- menu of comment module --}}
         @php
-        $routeUserArr = [
+        $routeCommentArr = [
         'admin.user.index',
-        'admin.user.edit',
-        'admin.user.show',
         ];
         @endphp
-        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeUserArr) ? 'menu-open' : '' }}">
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeCommentArr) ? 'menu-open' : '' }}">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-user-secret"></i>
             <p>
-              {{ __('message.user_management') }}
+              Quản lý đánh giá
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ route('admin.user.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.user.index' ? 'active' : '' }}">
+              <a href="{{ route('admin.comment.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.comment.index' ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>{{ __('message.user_list') }}</p>
+                <p>Danh sách đánh giá</p>
               </a>
             </li>
           </ul>
-        </li> -->
+        </li>
+
+        {{-- menu of report module --}}
+        @php
+        $routeReportArr = [
+        'admin.report.order',
+        ];
+        @endphp
+        <li class="nav-item {{ in_array(Route::currentRouteName(), $routeReportArr) ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-user-secret"></i>
+            <p>
+              Báo cáo bán hàng
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('admin.report.order') }}" class="nav-link {{ Route::currentRouteName() == 'admin.report.order' ? 'active' : '' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách báo cáo bán hàng</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

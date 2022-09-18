@@ -4,11 +4,11 @@ $totalQuantity = 0;
 $newTotal = 0;
 $newQuantity = 0;
 @endphp
-<h4 class="btn btn-info">Thông tin đơn hàng</h4>
-{{-- Thông Tin Đơn Hàng --}}
 
 <div class="border p-2">
-    <table class="table table-bordered table-hover table-striped ">
+    <div class="mb-3"><h4><b>Thông tin đơn hàng</b></h4></div>
+    {{-- Thông Tin Đơn Hàng --}}
+    <table class="table">
         <thead>
             <tr>
                 <th>Hình ảnh</th>
@@ -24,15 +24,14 @@ $newQuantity = 0;
             @if (!empty($carts))
             @foreach ($carts as $cart)
             @php
-            // $quantity = $cart[$products->id]['quantity'];
             $totalQuantity = $cart['quantity'];
             $totalMoney = $cart['quantity'] * $cart ['price'];
             @endphp
-            <tr>
+            <tr class="">
                 <div class="list-product">
                     <div class="product-detail">
                         <td>
-                            <p><img src="/{{ $cart['image'] }}" alt="{{ $cart['name'] }}" width="120px" class="img-fluid"></p>
+                            <p><img src="/{{ $cart['image'] }}" alt="{{ $cart['name'] }}" width="120" class="img-fluid"></p>
                         </td>
                         <td>
                             <p>{{ $cart['name'] }}</p>
@@ -44,9 +43,7 @@ $newQuantity = 0;
                             <p>{{ $cart['quantity']}}</p>
                         </td>
                         <td>
-                            <p>
                             <p>{{ number_format($totalMoney)}} VND</p>
-                            </p>
                         </td>
                     </div>
                 </div>

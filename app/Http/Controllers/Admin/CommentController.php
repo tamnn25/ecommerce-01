@@ -17,7 +17,8 @@ class CommentController extends Controller
      */
     public function index(Request $request)
     {
-        $comment = Comment::get();
+        $comment = Comment::orderBy('id', 'desc')
+            ->paginate(8);
 
         // Method: GET
         $data['comment'] = $comment;
@@ -117,15 +118,7 @@ class CommentController extends Controller
     public function destroy($id)
     {
         $category = Comment::find($id);
-
-        $product = Product::where('category_id', $id)->first();
-        if (!is_null($product)) {
-            return redirect()->route('admin.category.index')
-                ->with('error', 'Delete Category error!');
-        } else {
-            $category->delete();
-            return redirect()->route('admin.category.index')
-                ->with('success', 'Delete Category successful!');
-        }
+        $category->delete();
+        return redirect()->back();
     }
 }

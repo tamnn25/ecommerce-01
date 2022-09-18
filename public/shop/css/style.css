@@ -240,6 +240,16 @@ ol {
     margin: 0 auto;
 }
 
+.category-title {
+    margin-bottom: 10px;
+}
+
+.category-title h2 {
+    color: #1c1c1c;
+    font-weight: 500;
+    position: relative;
+}
+
 .set-bg {
     background-repeat: no-repeat;
     background-size: cover;
@@ -531,7 +541,7 @@ ol {
 .header__menu ul li {
     list-style: none;
     display: inline-block;
-    margin-right: 23px;
+    margin-right: 40px;
     text-transform: uppercase;
     position: relative;
 }
@@ -672,7 +682,7 @@ ol {
 -----------------------*/
 
 .hero {
-    padding-bottom: 50px;
+    padding-bottom: 15px;
 }
 
 .hero.hero-normal {
@@ -828,16 +838,17 @@ ol {
 }
 
 .hero__search__phone__icon {
-    font-size: 18px;
-    color: #7fad39;
+    font-size: 20px;
+    color: #F7941F;
     height: 50px;
     width: 50px;
-    background: #f5f5f5;
+    background: #dddedd;
     line-height: 50px;
     text-align: center;
     border-radius: 50%;
     float: left;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 .hero__search__phone__text {
@@ -1676,6 +1687,8 @@ ol {
     height: 270px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    border: 1px solid blanchedalmond;
 }
 
 .product__item__pic__hover {
@@ -1847,7 +1860,7 @@ ol {
 }
 
 .product__details__text p {
-    margin-bottom: 45px;
+    margin-bottom: 15px;
 }
 
 .product__details__text .primary-btn {

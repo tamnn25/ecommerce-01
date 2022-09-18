@@ -75,9 +75,9 @@
                             <h4>Giá</h4>
                             <div class="price-range-wrap">
                                 <form action="{{ route('home.shop', (request()->route()->parameters)?request()->route()->parameters['id']:0) }}">
-                                    <input type="radio" name="money" id="" value="1"> <label for="">Từ 0 - 100.000</label><br>
-                                    <input type="radio" name="money" id="" value="2"> <label for="">Từ 100.000 - 500.000</label><br>
-                                    <input type="radio" name="money" id="" value="3"> <label for="">Từ 500.000 - 1.000.000</label><br>
+                                    <input type="radio" name="money" id="" value="1"> <label for="">Từ 0 - 100.000 VNĐ</label><br>
+                                    <input type="radio" name="money" id="" value="2"> <label for="">Từ 100.000 VNĐ - 500.000 VNĐ</label><br>
+                                    <input type="radio" name="money" id="" value="3"> <label for="">Từ 500.000 VNĐ - 1.000.000VNĐ</label><br>
                                     <input type="submit" value="Search" class="btn btn-outline-success">
                                 </form>
 
@@ -160,7 +160,7 @@
                         </div> --}}
                         <div class="sidebar__item">
                             <div class="latest-product__text">
-                                <h4>Sản phẩm mới nhất</h4>
+                                <h4>Sản phẩm mới</h4>
                                  <div class="latest-product__slider owl-carousel">
                                     @for ($i = 1; $i <= 3; $i++) 
                                         <div class="latest-prdouct__slider__item">
@@ -227,12 +227,12 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
                                     
-                                    <h6><strong>You're Fround</strong><span> 
+                                    <h6><strong>Tìm thấy </strong><span> 
                                     @php
                                         $soluong = count($products);
                                         echo $soluong;
                                     @endphp
-                                    </span> <strong>Sản phẩm</strong></h6>
+                                    </span> <strong>sản phẩm</strong></h6>
                                 
                                 </div>
                             </div>
@@ -250,8 +250,8 @@
                             @foreach ($products as $product)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" style="border: 1px solid blanchedalmond;">
-                                        <img class="product__details__pic__item" src="{{ asset($product->thumbnail) }}" alt="{{ $product->image }}">
+                                        <div class="product__item__pic set-bg" style="border: 1px solid blanchedalmond;" onclick="location.href=`{{ route('product.detail', $product->id) }}`">
+                                            <img class="product__details__pic__item" src="{{ asset($product->thumbnail) }}" alt="{{ $product->image }}">
 
                                             <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>

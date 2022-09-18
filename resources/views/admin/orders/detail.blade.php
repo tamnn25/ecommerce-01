@@ -11,20 +11,19 @@
 
 {{-- import file css (private) --}}
 @push('css')
-    <link rel="stylesheet" href="/backend/css/orders/order-list.css">
+<link rel="stylesheet" href="/backend/css/orders/order-list.css">
 @endpush
 
 {{-- import file js (private) --}}
 @push('js')
-    <script src="/backend/js/orders/order-list.js"></script>
+<script src="/backend/js/orders/order-list.js"></script>
 @endpush
 
 @section('content')
-    {{-- show message --}}
-    @include('errors.error')
+{{-- show message --}}
+@include('errors.error')
+{{-- display form edit order --}}
+@include('admin.orders._order_detail')
 
-    {{-- display form edit order --}}
-    @include('admin.orders._order_detail')
-
-    <a href="{{ route('admin.order.index') }}" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Go to List Order</a>
+<a href="{{ route('admin.order.index') }}" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Go to List Order</a>
 @endsection
