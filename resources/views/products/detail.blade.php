@@ -18,7 +18,7 @@
                     <h3><strong>{{ $product->name }}</strong></h3>
 
                     <p class="product-comment">
-                        <span>{{ $product->description }}</span>
+                        <textarea rows="10" cols="50" class="form-control" >{{ $product->description }}</textarea>
                     </p>
                     <p class="product-comment">
                         <b>Loại sản phẩm: </b>
@@ -50,6 +50,12 @@
         </div>
     </div>
     </div>
+    <div class="container">
+        <div class="col-lg-12">
+            <h4>Mô tả sản phẩm</h4><hr>
+            <textarea rows="20" class="form-control">{{ $product->content }}</textarea>
+        </div>
+    </div>
     </div>
 </section>
 <!-- comment & rating -->
@@ -68,7 +74,7 @@
             @csrf
             <div class="row">
                 <div class="">
-                    <textarea type="text" name="content" class="form-control" placeholder="Viết đánh giá ... " v-model="newItem" @keyup.enter="addItem()"></textarea>
+                    <textarea type="text" rows="3" name="content" class="form-control" placeholder="Viết đánh giá ... " v-model="newItem" @keyup.enter="addItem()"></textarea>
                     <input type="hidden" name="product_id" value="{{$product->id}}">
 
                     <div class="rating">
@@ -86,6 +92,7 @@
     </div>
     <!--End Container -->
 </section><!-- end App -->
+
 <section class="categories">
     <div class="container">
         <div class="col-lg-12">
@@ -99,7 +106,7 @@
                 @foreach ($related as $item)
                 <div class="col-lg-3">
                     <div class="categories__item set-bg" data-setbg="{{ asset($item->thumbnail) }}">
-                        <h5><a href="{{ route('product.detail', $item->id) }}">{{ $item->category->name }}</a>
+                        <h5><a href="{{ route('product.detail', $item->id) }}">{{ $item->name }}</a>
                         </h5>
 
                     </div>

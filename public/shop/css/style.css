@@ -948,6 +948,10 @@ ol {
     right: -35px;
 }
 
+.content p {
+    margin-bottom: 1.5em;
+}
+
 
 /*---------------------
   Featured

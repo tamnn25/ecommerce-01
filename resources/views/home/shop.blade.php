@@ -60,7 +60,7 @@
                         <div class="breadcrumb__text">
                             <h2>Sản Phẩm</h2>
                             <div class="breadcrumb__option">
-                                <a href="{{ route('home.shop', 0) }}">Trang Chủ</a>
+                                <a href="{{ route('index', 0) }}">Trang Chủ</a>
                                 <span>Sản Phẩm</span>
                             </div>
                         </div>

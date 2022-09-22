@@ -22,7 +22,7 @@
     <tbody>
         @if(!empty($orders))
         @foreach ($orders as $key => $order)
-        <tr class="tr-order-{{ $order->id }}" data-order-id="{{ $order->id }}" data-full-name="{{ $order->full_name }}" data-total-quantity="{{ $order->total_quantity }}" data-total-money="{{ $order->total_money }}" data-status="{{ $order->status }}">
+        <tr class="tr-order-{{ $order->id }}" data-order-id="{{ $order->id }}" data-full-name="{{ $order->user->name }}" data-total-quantity="{{ $order->quantity }}" data-total-money="{{ $order->total }}" data-status="{{ $order->status }}">
             <td class="text-center">{{ $key+1 }}</td>
             <td>{{ $order->user->name }}</td>
 
