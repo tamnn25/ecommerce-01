@@ -64,6 +64,8 @@ function modalOrderStatus(that, url) {
     var totalMoney = selector.data('total-money');
     var status = selector.data('status');
 
+    console.log(selector)
+
     // Set Value for Modal
     $('#modal-fullname').val(fullName);
     $('#modal-total-quantity').val(totalQuantity);

@@ -18,8 +18,8 @@ class ProductController extends Controller
         $categories = Category::all();
 
         $product = Product::where('products.id', $id)->first();
-        $related = Product::all();
-        // dd($product);
+        $related = Product::where('category_id',$product->category->id)->get();
+
         $now = Carbon::now(); // hiển thị thời gian comment trong  deltail sản phẩn
         $data['now']        = $now; // giá goj
         $data['related']    = $related;

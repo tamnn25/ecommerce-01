@@ -23,10 +23,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function contact()
+    {
+        return view('home.contactpage');
+    }
+
     public function categories($id) {
         $category = Category::with('product')->find($id); 
 
-        return view('home.homepage')->with('products', $categories);
+        return view('home.homepage')->with('products', $category);
     }
 
     public function shop(Request $request, $id)

@@ -94,7 +94,7 @@
                                 <li><a href="#">Những cuốn sách hay</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Liên Hệ</a></li>
+                        <li class="active"><a href="{{ route('home.contact')  }}">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>

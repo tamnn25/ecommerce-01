@@ -30,8 +30,11 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
+// Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 Route::group(['prefix' => 'home', 'as' => 'home.'], function () {
     Route::get('shop/{id}', [HomeController::class, 'shop'])->name('shop');
+    Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 });
 
 Route::group(['prefix' => 'comment', 'as' => 'comment.'], function () {
